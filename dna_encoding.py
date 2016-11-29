@@ -33,16 +33,19 @@ def encode_source_file(filename):
                             elif w == '0':
                                 dna += 'Z'
                             elif '++' in w:
-                                dna += 'Q'
+                                if w.startswith('++'):
+                                    dna += 'QI'
+                                elif w.endswith('++'):
+                                    dna += 'IQ'
                             elif w == '+' or w == '*':
                                 dna += 'A'
                             elif re.match('>|<|>=|<=|==|!=', w) and w != "<<" and w != ">>":
                                 dna += 'C'
-                            elif "Read" in w:
+                            elif "read" in w:
                                 dna += 'R'
-                            elif "Write" in w:
+                            elif "write" in w:
                                 dna += 'W'
-                            elif re.match('([A-Za-z0-9\-\_]+)', w) and not re.match('if|else|int|short|unsigned|char|const', w) and not w[0].isdigit():
+                            elif re.match('([A-Za-z0-9\-\_]+)', w) and not re.match('if|else|int|short|unsigned|char|const|long', w) and not w[0].isdigit():
                                 dna += 'I'
                             print w, ' ********** ', dna
                 count += 1;
