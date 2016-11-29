@@ -1,4 +1,5 @@
-import re
+import re, os, shutil
+import os
 
 # TODO: implement this
 def seperate_functions():
@@ -13,7 +14,7 @@ def encode_source_file(filename):
         for line in f:
             li = line.strip()
             if not li.startswith("/*") and not re.match(r'^\s*$', li):
-                print li
+                # print li
                 if (count == 0):
                     function_name = li.split(' ')[1]
                 elif ')' in li and not real_content:
@@ -47,14 +48,40 @@ def encode_source_file(filename):
                                 dna += 'W'
                             elif re.match('([A-Za-z0-9\-\_]+)', w) and not re.match('if|else|int|short|unsigned|char|const|long', w) and not w[0].isdigit():
                                 dna += 'I'
-                            print w, ' ********** ', dna
+                            # print w, ' ********** ', dna
                 count += 1;
 
-    print dna
+    return dna
 
 def main():
-    function_map = seperate_functions()
-    encode_source_file("test.c")
+    # function_map = seperate_functions()
+    filenames = os.listdir('benchmark/dsplib/splitted')
+    tmp_dir = 'benchmark/dsplib/dna/'
+
+    if os.path.isdir(tmp_dir):
+        shutil.rmtree(tmp_dir)
+    os.mkdir(tmp_dir)
+
+    for filename in filenames:
+        ans = encode_source_file(os.path.join('benchmark/dsplib/splitted', filename))
+        dna_file = open(tmp_dir + filename, 'w')
+        dna_file.write(ans)
+        dna_file.close()
+
+
+    # function_map = seperate_functions()
+    filenames = os.listdir('benchmark/imglib/splitted')
+    tmp_dir = 'benchmark/imglib/dna/'
+
+    if os.path.isdir(tmp_dir):
+        shutil.rmtree(tmp_dir)
+    os.mkdir(tmp_dir)
+
+    for filename in filenames:
+        ans = encode_source_file(os.path.join('benchmark/imglib/splitted', filename))
+        dna_file = open(tmp_dir + filename, 'w')
+        dna_file.write(ans)
+        dna_file.close()
 
 
 
