@@ -1,0 +1,9 @@
+This function provides a wrapper around the IMG_idct_8x8_12q4       
+function.  It reads 12Q0 values in from the input array, and        
+writes them back as 12Q4.  Once all the values have been adjusted,  
+the function then branches directly to IMG_idct_8x8_12q4.           
+                                                                    
+It is strongly recommended that you adapt your code to call         
+IMG_idct_8x8_12q4 directly.  Calling this wrapper adds an extra     
+16 cycles per block of processing overhead, as well as 116          
+bytes of additional code.                                           

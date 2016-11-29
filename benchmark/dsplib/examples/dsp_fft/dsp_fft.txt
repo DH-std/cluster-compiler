@@ -1,0 +1,2 @@
+This function is obsolete. 
+Use optmized functions, e.g., DSP_fft16x16r and DSP_fft16x16t.

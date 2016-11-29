@@ -1,0 +1,37 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectName="dsp_firlms2"
+ProjectDir=""
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="dsp_firlms2_c.c"
+Source="..\support.c"
+Source="dsp_firlms2_d.c"
+Source="..\lnk64.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -q -fr".\Debug" -i"..\..\include" -d"_DEBUG" -mv6400
+
+["Compiler" Settings: "Release"]
+Options=-q -o3 -fr".\Release" -i"..\..\include" -mv6400
+
+["DspBiosBuilder" Settings: "Debug"]
+Options=-v6x
+
+["DspBiosBuilder" Settings: "Release"]
+Options=-v6x
+
+["Linker" Settings: "Debug"]
+Options=-q -c -o".\Debug\dsp_firlms2.out" -heap0x400 -stack0x400 -x -i"..\..\lib" -l"rts6400.lib" -l"dsp64x.lib" 
+
+["Linker" Settings: "Release"]
+Options=-q -c -o".\Release\dsp_firlms2.out" -heap0x400 -stack0x400 -x -i"..\..\lib" -l"rts6400.lib" -l"dsp64x.lib" 
+
