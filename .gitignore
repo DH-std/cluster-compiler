@@ -5,3 +5,5 @@
 *.exe
 *.opt.exe
 *.opt.s
+./src/*.pyc
+./src/tmp
