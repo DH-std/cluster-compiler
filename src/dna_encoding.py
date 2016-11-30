@@ -55,30 +55,30 @@ def encode_source_file(filename):
 
 def main():
     # function_map = seperate_functions()
-    filenames = os.listdir('benchmark/dsplib/splitted')
-    tmp_dir = 'benchmark/dsplib/dna/'
+    filenames = os.listdir('../benchmark/dsplib/splitted')
+    tmp_dir = '../benchmark/dsplib/dna/'
 
     if os.path.isdir(tmp_dir):
         shutil.rmtree(tmp_dir)
     os.mkdir(tmp_dir)
 
     for filename in filenames:
-        ans = encode_source_file(os.path.join('benchmark/dsplib/splitted', filename))
+        ans = encode_source_file(os.path.join('../benchmark/dsplib/splitted', filename))
         dna_file = open(tmp_dir + filename, 'w')
         dna_file.write(ans)
         dna_file.close()
 
 
     # function_map = seperate_functions()
-    filenames = os.listdir('benchmark/imglib/splitted')
-    tmp_dir = 'benchmark/imglib/dna/'
+    filenames = os.listdir('../benchmark/imglib/splitted')
+    tmp_dir = '../benchmark/imglib/dna/'
 
     if os.path.isdir(tmp_dir):
         shutil.rmtree(tmp_dir)
     os.mkdir(tmp_dir)
 
     for filename in filenames:
-        ans = encode_source_file(os.path.join('benchmark/imglib/splitted', filename))
+        ans = encode_source_file(os.path.join('../benchmark/imglib/splitted', filename))
         dna_file = open(tmp_dir + filename, 'w')
         dna_file.write(ans)
         dna_file.close()
