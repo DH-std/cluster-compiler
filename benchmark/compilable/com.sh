@@ -15,7 +15,10 @@ opt $seq < $infile.bc  > $infile.opt.bc
 llc $infile.opt.bc -o $infile.opt.s
 gcc -I . -o $infile.opt.exe $infile.opt.s $infile/${infile}_d.c $infile/${infile}_c.c support.c
 
+set +e
 rm time.output
+set -e
+
 ./$infile.opt.exe
 
 set +x
