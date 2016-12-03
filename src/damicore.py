@@ -67,7 +67,7 @@ if __name__ == '__main__':
   if a.compressor == 'ppmd' and (
       not os.path.exists('ppmd_tmp') or not os.path.isdir('ppmd_tmp')):
     os.mkdir('ppmd_tmp')
- 
+
   kwargs = {
       'pair_dir': 'tmp',
       'ppmd_tmp_dir': 'ppmd_tmp',
@@ -124,7 +124,11 @@ if __name__ == '__main__':
   # Output cluster membership
   out = 'filename,cluster\n'
   for fname, cluster in d['fname_cluster'].items():
-    out += '%s,%d\n' % (fname, cluster)
+    # out += '%s,%d\n' % (fname, cluster)
+    out += fname
+    out += "\t"
+    out += str(cluster)
+    out += "\n"
 
   if a.output is None:
     print out
