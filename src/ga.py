@@ -1,7 +1,7 @@
 import random
 import sys
 import subprocess
-
+from fitness import evaluate
 
 GEN_NUM = 100
 POP_SIZE = 300
@@ -78,16 +78,11 @@ def get_children(parents):
                    c[i2] = tmp_pass
         children.append((c, fitness(c)))
     # print children
-    sorted(children, key=lambda x: x[1])
+    children = sorted(children, key=lambda x: x[1])
     return children
 
 def fitness(passlist):
-    args = ["./com.sh", function_name] + passlist
-    out = subprocess.call(args)
-    f = open("time.output", 'rb')
-    score = int(f.readline())
-    f.close()
-    return score
+    return evaluate(function_name, passlist)
 
 def select_new_parents(parents, children):
     new_parents = []
@@ -131,9 +126,10 @@ if __name__ == "__main__":
         parents.append((tmp, fitness(tmp)))
 
     while gen <= GEN_NUM:
-        sorted(parents, key=lambda x: x[1])
+        parents = sorted(parents, key=lambda x: x[1])
         children = get_children(parents)
         parents = select_new_parents(parents, children)
         gen += 1
+        print "finish gen " + str(gen)
 
     print parents[0][0]
