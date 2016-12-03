@@ -1,23 +1,15 @@
 import os
-import pickle, subprocess
-
-def evaluate(fnc, passlist):
-    args = ["./com.sh", fnc] + passlist
-    out = subprocess.call(args)
-    f = open("time.output", 'rb')
-    score = int(f.readline())
-    f.close()
-    return score
+import pickle, subprocess, fitness
 
 def clean_method(fnc, inputpass):
-    best_seq = inputpass
-    best_fit = evaluate(fnc, best_seq)
+    best_seq = inputpass[:]
+    best_fit = fitness.evaluate(fnc, best_seq)
     for p in inputpass:
-        new_seq = best_seq
+        new_seq = best_seq[:]
         new_seq.pop(best_seq.index(p))
-        new_fit = evaluate(fnc, new_seq)
+        new_fit = fitness.evaluate(fnc, new_seq)
         if new_fit <= best_fit:
-            best_seq = new_seq
+            best_seq = new_seq[:]
             best_fit = new_fit
     return best_seq
 
