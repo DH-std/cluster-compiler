@@ -25,7 +25,6 @@
 -lower-expect
 -memcpyopt
 -prune-eh
--simplify-libcalls
 -targetlibinfo
 -basiccg
 -lazy-value-info
@@ -49,7 +48,6 @@
 -dce
 -early-cse
 -indvars
--internalize
 -licm
 -loop-reduce
 -loop-unswitch

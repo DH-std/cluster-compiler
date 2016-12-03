@@ -14,7 +14,7 @@
 /*          Copyright (C) 2003 Texas Instruments, Incorporated.             */
 /*                          All Rights Reserved.                            */
 /* ======================================================================== */
-    
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -122,8 +122,10 @@ int main()
 /*  Call hand-coded assembly version (located in IMG64x.lib library         */ 
 /*  archive - see Project -> Build Options -> Linker -> Include Libraries)  */
 /* ======================================================================== */   
+    settime();
     IMG_boundary(in_data, rows, cols, out_coord_asm, out_gray_asm);
-    
+    gettime();
+
 /* ======================================================================== */
 /*  Call natural-C version                                                  */
 /* ======================================================================== */

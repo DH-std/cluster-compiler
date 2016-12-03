@@ -48,7 +48,7 @@ int mem_compare(const void *r1, const char *n1,
     /*  We'll output whitespace for the entries which are outside our       */
     /*  array.                                                              */
     /* -------------------------------------------------------------------- */
-    addr  = (unsigned)c1[0]; // removed a &
+    addr  = (unsigned)&c1[0];
     skip  = addr & 7;
     addr -= skip;
     c1   -= skip;
@@ -165,3 +165,19 @@ int mem_compare(const void *r1, const char *n1,
     return -1;
 }
 
+
+#include <time.h>
+
+unsigned long long t;
+unsigned long long offset;
+
+void settime() {
+    t = clock();
+}
+
+void gettime() {
+    t = clock() - t;
+    FILE *f = fopen("time.output", "a");
+    fprintf(f, "%lld\n", t);
+    fclose(f);
+}
