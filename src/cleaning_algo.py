@@ -1,8 +1,13 @@
 import os
-import pickle
+import pickle, subprocess
 
 def evaluate(fnc, passlist):
-    
+    args = ["./com.sh", fnc] + passlist
+    out = subprocess.call(args)
+    f = open("time.output", 'rb')
+    score = int(f.readline())
+    f.close()
+    return score
 
 def clean_method(fnc, inputpass):
     best_seq = inputpass
@@ -18,16 +23,11 @@ def clean_method(fnc, inputpass):
 
 
 def main():
-    # fn = os.path.join(os.path.dirname(__file__), "../output/sortedFunctions")
-    # print fn
-    # f = open(fn, 'rb')
-    # dic = pickle.load(f)
-    # f.close()
-    # print dic
 
-    function_name = "boundary.c"
-    inputpass = ["-loops", "-inline", "-dse"]
+    function_name = "img_boundary"
+    passlist = ["-loops", "-inline", "-dse"]
     best_ans = clean_method(function_name, passlist)
+    print best_ans
 
 
 if __name__ == "__main__":
