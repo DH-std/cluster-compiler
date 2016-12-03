@@ -7,4 +7,3 @@
 *.opt.s
 ./src/*.pyc
 ./src/tmp
-./output
