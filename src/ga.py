@@ -31,7 +31,7 @@ def tournament_selection(parents):
         selected_parents.append(winner)
     return selected_parents
 
-def get_children(parents):
+def get_children(func, parents):
     i = 0
     tmp_children = []
     children = []
@@ -76,13 +76,13 @@ def get_children(parents):
                    tmp_pass = c[i1]
                    c[i1] = c[i2]
                    c[i2] = tmp_pass
-        children.append((c, fitness(c)))
+        children.append((c, fitness(func, c)))
     # print children
     children = sorted(children, key=lambda x: x[1])
     return children
 
-def fitness(passlist):
-    return evaluate(function_name, passlist)
+def fitness(func, passlist):
+    return evaluate(func, passlist)
 
 def select_new_parents(parents, children):
     new_parents = []
@@ -104,15 +104,14 @@ def select_new_parents(parents, children):
         else:
             new_parents.append(parents[i])
             i += 1
-    return new_parents 
+    return new_parents
 
 def nodup(seq):
     seen = set()
     seen_add = seen.add
     return [x for x in seq if not (x in seen or seen_add(x))]
 
-
-if __name__ == "__main__":
+def ga(func):
     gen = 1
 
     #init
@@ -123,13 +122,16 @@ if __name__ == "__main__":
         indexes = random.sample(range(len(passes)), size)
         for i in indexes:
             tmp.append(passes[i])
-        parents.append((tmp, fitness(tmp)))
+        parents.append((tmp, fitness(func,tmp)))
 
     while gen <= GEN_NUM:
         parents = sorted(parents, key=lambda x: x[1])
-        children = get_children(parents)
+        children = get_children(func, parents)
         parents = select_new_parents(parents, children)
         gen += 1
         print "finish gen " + str(gen)
+    return parents[0][0]
 
-    print parents[0][0]
+if __name__ == "__main__":
+    func = "img_boundary"
+    print ga(func)
