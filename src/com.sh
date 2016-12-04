@@ -15,13 +15,23 @@ opt $seq < $infile.bc  > $infile.opt.bc
 llc $infile.opt.bc -o $infile.opt.s
 gcc -I . -o $infile.opt.exe $infile.opt.s ../benchmark/compilable/$infile/${infile}_d.c ../benchmark/compilable/$infile/${infile}_c.c support.c
 
+set +x +e
 rm time.output
-./$infile.opt.exe
 
-set +x
+for i in {1..12}
+do
+  ./$infile.opt.exe
+done
+mv time.output time.input
+
+g++ -o avg.exe avg.cpp
+./avg.exe < time.input > time.output
+cat time.output
+
 GREEN='\033[0;32m'
 NC='\033[0m'
 echo -e "${GREEN}success!${NC}"
+echo "output in file time.output"
 
 rm *.bc
 rm *.s
