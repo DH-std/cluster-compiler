@@ -18,12 +18,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Header file for the memory compare function */
-int mem_compare(const void *ptr1, const char *name1,
-                const void *ptr2, const char *name2, int len);
-
 /* Header file for the DSPLIB function */
 #include "IMG_wave_horz.h"
+#include "support.h"
 
 /* Header file for the C function */
 void IMG_wave_horz_c(const short * in_data, const short * qmf, const short * mqmf, short * out_data, int n);
@@ -104,7 +101,9 @@ int main()
 /*  Call hand-coded assembly version (located in IMG64x.lib library         */ 
 /*  archive - see Project -> Build Options -> Linker -> Include Libraries)  */
 /* ======================================================================== */   
+    settime();
     IMG_wave_horz(in_data, qmf, mqmf, out_data_asm, COLS);
+    gettime();
     
 /* ======================================================================== */
 /*  Call natural-C version                                                  */

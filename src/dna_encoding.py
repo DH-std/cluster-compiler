@@ -25,8 +25,9 @@ def split_again(words):
 
 
 def encode_source_file(filename):
-    count = 0;
-    function_name = ""
+    found_beginning = False
+    function_name = filename.split('/')[4].rstrip('.c')
+    print "****************: ", function_name
     dna = ""
     real_content = False
     with open(filename) as f:
@@ -35,12 +36,14 @@ def encode_source_file(filename):
             if not li.startswith("/*") and not re.match(r'^\s*$', li):
                 print "---------------------------------------------------"
                 print li
-                if (count == 0):
-                    function_name = li.split(' ')[1]
-                elif ')' in li and not real_content:
+                # if '(' in li and ')' in li:
+                #     print li
+                if function_name in li:
+                    found_beginning = True
+                if ((')' in li and not '(' in li) or ('(' in li and ')' in li and function_name in li)) and found_beginning and not real_content:
                     real_content = True
 
-                if real_content and count > 0:
+                if real_content:
                     wl = li.split(' ')
                     rwl = []
 
@@ -75,9 +78,24 @@ def encode_source_file(filename):
                                 dna += 'R'
                             elif "write" in w:
                                 dna += 'W'
+                            elif w == '[':
+                                c = ''
+                                if '=' in rwl:
+                                    c = '='
+                                elif '+=' in rwl:
+                                    c = '+='
+                                if len(c)>0:
+                                    # it is a read if array access is on the right of =,
+                                    # otherwise it is a write
+                                    if rwl.index(c) < rwl.index('['):
+                                        dna = dna.rstrip('I')
+                                        dna += 'R'
+                                    else:
+                                        dna = dna.rstrip('I')
+                                        dna += 'W'
                             elif re.match('^[a-zA-Z0-9_.-]*$', w) and not re.match('if|else|int|short|unsigned|char|const|long', w) and not w[0].isdigit():
                                 dna += 'I'
-                count += 1;
+                print dna
 
     return dna
 

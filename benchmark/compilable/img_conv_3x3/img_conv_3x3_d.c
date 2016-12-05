@@ -18,12 +18,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Header file for the memory compare function */
-int mem_compare(const void *ptr1, const char *name1,
-                const void *ptr2, const char *name2, int len);
 
 /* Header file for the DSPLIB function */
 #include "IMG_conv_3x3.h"
+#include "support.h"
 
 /* Header file for the C function */
 void IMG_conv_3x3_c(const unsigned char * in_data, unsigned char * out_data, int cols, char * mask, int shift);
@@ -161,8 +159,10 @@ int main()
 /* ======================================================================== */
 /*  Call hand-coded assembly version (located in IMG64x.lib library         */ 
 /*  archive - see Project -> Build Options -> Linker -> Include Libraries)  */
-/* ======================================================================== */   
+/* ======================================================================== */
+    settime();
     IMG_conv_3x3(in_data, out_data_asm, COLS, mask, SHIFT);
+    gettime();
     
 /* ======================================================================== */
 /*  Call natural-C version                                                  */
