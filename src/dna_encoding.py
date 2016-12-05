@@ -21,6 +21,8 @@ def split_again(words):
                 ans.append(words[i])
             word = ""
         i = i + 1
+    if len(word) > 0:
+        ans.append(word)
     return ans
 
 
@@ -34,12 +36,11 @@ def encode_source_file(filename):
         for line in f:
             li = line.strip()
             if not li.startswith("/*") and not re.match(r'^\s*$', li):
-                # print "---------------------------------------------------"
-                # print li
+                print "---------------------------------------------------"
+                print li
                 # if '(' in li and ')' in li:
                 #     print li
                 if ("IMG_" in li or "DSP_" in li) and not "include" in li and not ";" in li and not found_beginning:
-                    print li
                     found_beginning = True
                 if ((')' in li and not '(' in li) or ('(' in li and ')' in li and function_name in li)) and found_beginning and not real_content:
                     real_content = True
@@ -55,7 +56,7 @@ def encode_source_file(filename):
                         else:
                             rwl = rwl + split_again(ws)
 
-                    # print rwl
+                    print rwl
                     for w in rwl:
                     # w = w.strip(';').strip('(').strip(')').strip('{').strip('}')
                         if w == "/*" or w == "//":
@@ -94,15 +95,15 @@ def encode_source_file(filename):
                                     else:
                                         dna = dna.rstrip('I')
                                         dna += 'W'
-                            elif re.match('^[a-zA-Z0-9_.-]*$', w) and not re.match('if|else|int|short|unsigned|char|const|long', w) and not w[0].isdigit():
+                            elif re.match('^[a-zA-Z0-9_.-/*]*$', w) and not re.match('if|else|int|short|unsigned|char|const|long', w) and not w[0].isdigit():
                                 dna += 'I'
-                # print dna
+                print dna
 
     return dna
 
 def main():
 
-    # print split_again('i20=in[i+2*w]');
+    # print split_again('i_data[(i');
     # print re.match('^[a-zA-Z0-9_.-]*$', 'y[2*i+1]')
 
     filenames = os.listdir('../benchmark/dsplib/splitted')
