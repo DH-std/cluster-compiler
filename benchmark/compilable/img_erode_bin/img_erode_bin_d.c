@@ -18,12 +18,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Header file for the memory compare function */
-int mem_compare(const void *ptr1, const char *name1,
-                const void *ptr2, const char *name2, int len);
 
 /* Header file for the DSPLIB function */
 #include "IMG_erode_bin.h"
+#include "support.h"
 
 /* Header file for the C function */
 void IMG_erode_bin_c(const unsigned char * in_data, unsigned char * out_data, const char * mask, int cols);
@@ -317,8 +315,10 @@ int main()
 /* ======================================================================== */
 /*  Call hand-coded assembly version (located in IMG64x.lib library         */ 
 /*  archive - see Project -> Build Options -> Linker -> Include Libraries)  */
-/* ======================================================================== */   
+/* ======================================================================== */
+    settime();
     IMG_erode_bin(in_data, out_data_asm, mask, COLS);
+    gettime();
     
 /* ======================================================================== */
 /*  Call natural-C version                                                  */
