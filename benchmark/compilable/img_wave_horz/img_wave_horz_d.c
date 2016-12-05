@@ -101,9 +101,9 @@ int main()
 /*  Call hand-coded assembly version (located in IMG64x.lib library         */ 
 /*  archive - see Project -> Build Options -> Linker -> Include Libraries)  */
 /* ======================================================================== */   
-    gettime();
-    IMG_wave_horz(in_data, qmf, mqmf, out_data_asm, COLS);
     settime();
+    IMG_wave_horz(in_data, qmf, mqmf, out_data_asm, COLS);
+    gettime();
     
 /* ======================================================================== */
 /*  Call natural-C version                                                  */
