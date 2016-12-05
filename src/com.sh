@@ -24,10 +24,12 @@ do
 done
 mv time.output time.input
 
+set -e
 g++ -o avg.exe avg.cpp
 ./avg.exe < time.input > time.output
 cat time.output
 
+set +e
 GREEN='\033[0;32m'
 NC='\033[0m'
 echo -e "${GREEN}success!${NC}"
