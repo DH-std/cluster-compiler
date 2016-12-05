@@ -19,12 +19,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* Header file for the memory compare function */
-int mem_compare(const void *ptr1, const char *name1,
-                const void *ptr2, const char *name2, int len);
-
 /* Header file for the DSPLIB function */
 #include "IMG_perimeter.h"
+#include "support.h"
 
 /* Header file for the C function */
 void IMG_perimeter_c(unsigned char * in_data, int cols, unsigned char * out_data);
@@ -336,7 +333,9 @@ int main()
 /*  Call hand-coded assembly version (located in IMG64x.lib library         */ 
 /*  archive - see Project -> Build Options -> Linker -> Include Libraries)  */
 /* ======================================================================== */   
+    settime();
     IMG_perimeter(in_data+COLS, COLS, out_data_asm);
+    gettime();
     
 /* ======================================================================== */
 /*  Call natural-C version                                                  */
