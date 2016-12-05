@@ -18,12 +18,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Header file for the memory compare function */
-int mem_compare(const void *ptr1, const char *name1,
-                const void *ptr2, const char *name2, int len);
 
 /* Header file for the DSPLIB function */
 #include "IMG_mad_16x16.h"
+#include "support.h"
 
 /* Header file for the C function */
 void IMG_mad_16x16_c(const unsigned char * ref_data, const unsigned char * src_data, int Pitch, int h, int v, unsigned int * match);
@@ -573,8 +571,10 @@ int main()
 /* ======================================================================== */
 /*  Call hand-coded assembly version (located in IMG64x.lib library         */ 
 /*  archive - see Project -> Build Options -> Linker -> Include Libraries)  */
-/* ======================================================================== */   
+/* ======================================================================== */
+    settime();
     IMG_mad_16x16(ref_data, src_data, pitch, sx, sy, match_asm);
+    gettime();
     
 /* ======================================================================== */
 /*  Call natural-C version                                                  */
