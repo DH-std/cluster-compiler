@@ -76,7 +76,12 @@ def get_children(func, parents):
                    tmp_pass = c[i1]
                    c[i1] = c[i2]
                    c[i2] = tmp_pass
-        children.append((c, fitness(func, c)))
+
+        fit_score = fitness(func, c)
+        if fit_score == 0:
+            print "VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV"
+            fit_score = fitness(func, c) 
+        children.append((c, fit_score))
     # print children
     children = sorted(children, key=lambda x: x[1])
     return children
@@ -122,7 +127,11 @@ def ga(func):
         indexes = random.sample(range(len(passes)), size)
         for i in indexes:
             tmp.append(passes[i])
-        parents.append((tmp, fitness(func,tmp)))
+        fit_score = fitness(func, tmp)
+        if fit_score == 0:
+            print "VVVVVVVVVVVVVVVVVVVVVVVVV"
+            fit_score = fitness(func, tmp)
+        parents.append((tmp, fit_score))
 
     while gen <= GEN_NUM:
         parents = sorted(parents, key=lambda x: x[1])
@@ -130,7 +139,7 @@ def ga(func):
         parents = select_new_parents(parents, children)
         gen += 1
         print "finish gen " + str(gen)
-    return parents[0][0]
+    return parents[0]
 
 if __name__ == "__main__":
     func = "img_boundary"
