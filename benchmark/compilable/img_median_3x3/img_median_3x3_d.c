@@ -18,12 +18,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Header file for the memory compare function */
-int mem_compare(const void *ptr1, const char *name1,
-                const void *ptr2, const char *name2, int len);
-
 /* Header file for the DSPLIB function */
 #include "IMG_median_3x3.h"
+#include "support.h"
 
 /* Header file for the C function */
 void IMG_median_3x3_c(unsigned char * in_data, int cols, unsigned char * out_data);
@@ -158,7 +155,9 @@ int main()
 /*  Call hand-coded assembly version (located in IMG64x.lib library         */ 
 /*  archive - see Project -> Build Options -> Linker -> Include Libraries)  */
 /* ======================================================================== */   
+    settime();
     IMG_median_3x3(in_data, COLS, out_data_asm);
+    gettime();
     
 /* ======================================================================== */
 /*  Call natural-C version                                                  */
