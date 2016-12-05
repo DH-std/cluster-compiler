@@ -170,6 +170,7 @@ int mem_compare(const void *r1, const char *n1,
 
 unsigned long long t;
 unsigned long long offset;
+struct timespec start_time;
 
 #if defined(__i386__)
 static __inline__ unsigned long long rdtsc(void) {
@@ -189,11 +190,15 @@ static __inline__ unsigned long long rdtsc(void) {
 #endif
 
 void settime() {
-    t = rdtsc();
+    //t = rdtsc();
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start_time);
 }
 
 void gettime() {
-    t = rdtsc() - t;
+    //t = rdtsc() - t;
+    struct timespec end_time;
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end_time);
+    t = end_time.tv_nsec - start_time.tv_nsec;
     FILE *f = fopen("time.output", "a");
     fprintf(f, "%lld\n", t);
     fclose(f);
