@@ -18,12 +18,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Header file for the memory compare function */
-int mem_compare(const void *ptr1, const char *name1,
-                const void *ptr2, const char *name2, int len);
-
 /* Header file for the DSPLIB function */
 #include "IMG_quantize.h"
+#include "support.h"
 
 /* Header file for the C function */
 void IMG_quantize_c(short * data, int num_blks, int blk_size, const short * recip_tbl, int q_pt);
@@ -80,8 +77,10 @@ int main()
 /*  Call hand-coded assembly version (located in IMG64x.lib library         */ 
 /*  archive - see Project -> Build Options -> Linker -> Include Libraries)  */
 /* ======================================================================== */   
+    settime();
     IMG_quantize(data_asm, num_blks, BLK_SIZE, recip_tbl, Q_PT);
-    
+    gettime();
+
 /* ======================================================================== */
 /*  Call natural-C version                                                  */
 /* ======================================================================== */
