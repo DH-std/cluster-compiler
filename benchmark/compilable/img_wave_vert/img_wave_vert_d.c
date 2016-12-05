@@ -119,9 +119,9 @@ int main()
 /*  Call hand-coded assembly version (located in IMG64x.lib library         */ 
 /*  archive - see Project -> Build Options -> Linker -> Include Libraries)  */
 /* ======================================================================== */   
-    gettime();
-    IMG_wave_vert(in_data_ptr, qmf, mqmf, out_ldata_asm, out_hdata_asm, COLS);
     settime();
+    IMG_wave_vert(in_data_ptr, qmf, mqmf, out_ldata_asm, out_hdata_asm, COLS);
+    gettime();
 
 /* ======================================================================== */
 /*  Call natural-C version                                                  */
