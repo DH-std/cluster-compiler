@@ -6,7 +6,7 @@ def split_again(words):
     word = ""
     i = 0
     while i < len(words):
-        if words[i].isalpha() or (words[i] == '_') or words[i].isdigit() or ((words[i] == '*') and (i+1 < len(words) and words[i+1].isalpha())):
+        if words[i].isalpha() or (words[i] == '_') or words[i].isdigit() or ((words[i] == '*') and (i+1 < len(words) and words[i+1].isalpha()) and ((i==0) or (i>0)and(not words[i-1].isalpha() and not words[i-1].isdigit()))):
             word += words[i]
         else:
             if len(word) > 0:
@@ -57,7 +57,7 @@ def encode_source_file(filename):
                             rwl = rwl + split_again(ws)
 
                     print rwl
-                    for w in rwl:
+                    for index,w in enumerate(rwl):
                     # w = w.strip(';').strip('(').strip(')').strip('{').strip('}')
                         if w == "/*" or w == "//":
                             break
@@ -89,7 +89,8 @@ def encode_source_file(filename):
                                 if len(c)>0:
                                     # it is a read if array access is on the right of =,
                                     # otherwise it is a write
-                                    if rwl.index(c) < rwl.index('['):
+                                    # print '=============', c, rwl.index(c), rwl.index
+                                    if rwl.index(c) < index:
                                         dna = dna.rstrip('I')
                                         dna += 'R'
                                     else:
