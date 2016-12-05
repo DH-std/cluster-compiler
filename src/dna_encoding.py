@@ -34,11 +34,12 @@ def encode_source_file(filename):
         for line in f:
             li = line.strip()
             if not li.startswith("/*") and not re.match(r'^\s*$', li):
-                print "---------------------------------------------------"
-                print li
+                # print "---------------------------------------------------"
+                # print li
                 # if '(' in li and ')' in li:
                 #     print li
-                if function_name in li:
+                if ("IMG_" in li or "DSP_" in li) and not "include" in li and not ";" in li and not found_beginning:
+                    print li
                     found_beginning = True
                 if ((')' in li and not '(' in li) or ('(' in li and ')' in li and function_name in li)) and found_beginning and not real_content:
                     real_content = True
@@ -54,7 +55,7 @@ def encode_source_file(filename):
                         else:
                             rwl = rwl + split_again(ws)
 
-                    print rwl
+                    # print rwl
                     for w in rwl:
                     # w = w.strip(';').strip('(').strip(')').strip('{').strip('}')
                         if w == "/*" or w == "//":
@@ -95,7 +96,7 @@ def encode_source_file(filename):
                                         dna += 'W'
                             elif re.match('^[a-zA-Z0-9_.-]*$', w) and not re.match('if|else|int|short|unsigned|char|const|long', w) and not w[0].isdigit():
                                 dna += 'I'
-                print dna
+                # print dna
 
     return dna
 
