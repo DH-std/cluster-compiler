@@ -1,0 +1,10 @@
+(dp0
+S'img_sobel'
+p1
+((lp2
+S'-scalarrepl'
+p3
+aI511
+F13591.728223085403
+tp4
+s.
