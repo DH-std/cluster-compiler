@@ -35,6 +35,9 @@ NC='\033[0m'
 echo -e "${GREEN}success!${NC}"
 echo "output in file time.output"
 
-rm *.bc
-rm *.s
-rm *.exe
+if [ -z $3 ]
+then
+  rm *.bc
+  rm *.s
+  rm *.exe
+fi
