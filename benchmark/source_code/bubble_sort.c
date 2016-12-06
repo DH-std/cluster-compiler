@@ -1,4 +1,9 @@
-void DSP_bubble_sort(int size, int *xp) {
+void DSP_bubble_sort
+(
+  int size,
+  int *xp
+)
+{
   int i = 0, j = 0;
   for (j = 0; j < size; j += 1) {
     for (i = 0; i < size - 1; i += 1) {
@@ -9,7 +14,4 @@ void DSP_bubble_sort(int size, int *xp) {
       }
     }
   }
-  // for (i = 0; i < size; i += 1) {
-  //   printf("Sorted i = %d %d", i, xp[i]);
-  // }
 }

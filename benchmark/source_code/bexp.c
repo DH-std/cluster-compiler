@@ -63,7 +63,11 @@
 /*                           All Rights Reserved.                           */
 /* ======================================================================== */
 
-int DSP_bexp(const int *x, short nx)
+int DSP_bexp
+(
+  const int *x,
+  short nx
+)
 {
     int i;
     unsigned int mask, mag;

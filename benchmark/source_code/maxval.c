@@ -49,7 +49,11 @@
 /*                           All Rights Reserved.                           */
 /* ======================================================================== */
 
-short DSP_maxval(const short *x, int nx)
+short DSP_maxval
+(
+  const short *x,
+  int nx
+)
 {
     int i;
     short max = -32768;

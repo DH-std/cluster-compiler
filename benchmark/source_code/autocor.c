@@ -76,7 +76,13 @@
 /*                           All Rights Reserved.                           */
 /* ======================================================================== */
 
-void DSP_autocor(short *restrict r, const short *restrict x, int nx, int nr)
+void DSP_autocor
+(
+  short *restrict r,
+  const short *restrict x,
+  int nx,
+  int nr
+)
 {
    int i, k;
    int sum;

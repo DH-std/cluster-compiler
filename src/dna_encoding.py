@@ -13,7 +13,7 @@ def split_again(words):
             test = words[i]
             if i+1 < len(words):
                 test = test + words[i+1]
-            if (test == '+=' or test == '++' or test == '>=' or test == '<=' or test == '!=' or test == '<<' or test == '>>' or test == "//" or test == "/*" or test =='*/'):
+            if (test == '+=' or test == '++' or test == '>=' or test == '<=' or test == '!=' or test == '<<' or test == '>>' or test == "//" or test == "/*" or test =='*/' or test == '->'):
                 ans.append(test)
                 i = i + 1
             else:
@@ -28,6 +28,7 @@ def split_again(words):
 def encode_source_file(filename):
     found_beginning = False
     function_name = filename.split('/')[3].rstrip('.c')
+    print function_name
     print "****************: ", function_name
     dna = ""
     real_content = False
@@ -35,14 +36,17 @@ def encode_source_file(filename):
         for line in f:
             li = line.strip()
             if not li.startswith("/*") and not re.match(r'^\s*$', li):
-                print "---------------------------------------------------"
-                print li
+                # print "---------------------------------------------------"
+                # print li
                 # if '(' in li and ')' in li:
                 #     print li
                 if ("IMG_" in li or "DSP_" in li) and not "include" in li and not ";" in li and not found_beginning:
                     found_beginning = True
-                if ((')' in li and not '(' in li) or ('(' in li and ')' in li and function_name in li)) and found_beginning and not real_content:
+                    print li
+                    continue
+                if (')' in li ) and found_beginning and not real_content:
                     real_content = True
+                    print li
 
                 if real_content:
                     wl = li.split(' ')
@@ -55,7 +59,7 @@ def encode_source_file(filename):
                         else:
                             rwl = rwl + split_again(ws)
 
-                    print rwl
+                    # print rwl
                     for index,w in enumerate(rwl):
                     # w = w.strip(';').strip('(').strip(')').strip('{').strip('}')
                         if w == "/*" or w == "//":
@@ -95,9 +99,9 @@ def encode_source_file(filename):
                                     else:
                                         dna = dna.rstrip('I')
                                         dna += 'W'
-                            elif re.match('^[a-zA-Z0-9_.-/*]*$', w) and not re.match('if|else|int|short|unsigned|char|const|long', w) and not w[0].isdigit():
+                            elif re.match('^[a-zA-Z0-9_.-/*]*$', w) and not re.match('if|else|int|short|signed|unsigned|char|const|long', w) and not w[0].isdigit():
                                 dna += 'I'
-                print dna
+                # print dna
 
     return dna
 
@@ -123,7 +127,7 @@ def main():
 
 
     filenames = os.listdir('../benchmark/source_code')
-    tmp_dir = '../output/dna'
+    tmp_dir = '../output/dna/'
 
     if os.path.isdir(tmp_dir):
         shutil.rmtree(tmp_dir)

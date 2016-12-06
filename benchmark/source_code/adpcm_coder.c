@@ -18,11 +18,12 @@ static int stepsizeTable[89] = {
     15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767
 };
 
-void DSP_adpcm_coder(indata, outdata, len, state)
-    short indata[];
-    char outdata[];
-    int len;
-    struct adpcm_state *state;
+void DSP_adpcm_coder(
+  short indata[],
+  char outdata[],
+  int len,
+  struct adpcm_state *state
+)
 {
     short *inp;     /* Input buffer pointer */
     signed char *outp;    /* output buffer pointer */

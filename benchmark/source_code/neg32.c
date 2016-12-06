@@ -63,7 +63,12 @@
 /*                           All Rights Reserved.                           */
 /* ======================================================================== */
 
-void DSP_neg32(int *x, int *r, short nx)
+void DSP_neg32
+(
+  int *x,
+  int *r,
+  short nx
+)
 {
     int i;
 

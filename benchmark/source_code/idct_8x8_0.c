@@ -65,7 +65,11 @@
 /* ======================================================================== */
 /*  IMG_idct_8x8_12q4   -- Natural C version of IMG_idct_8x8_12q4().        */
 /* ======================================================================== */
-void IMG_idct_8x8_12q4(short *idct_data, unsigned num_idcts)
+void IMG_idct_8x8_12q4
+(
+  short *idct_data,
+  unsigned num_idcts
+)
 {
     /* -------------------------------------------------------------------- */
     /*  Cosine Constants (Q16, scaled down by sqrt(2)).                     */

@@ -80,7 +80,11 @@
 /*                           All Rights Reserved.                           */
 /* ======================================================================== */
 
-void IMG_fdct_8x8(short *dct_data, unsigned num_fdcts)
+void IMG_fdct_8x8
+(
+  short *dct_data,
+  unsigned num_fdcts
+)
 {
     /* -------------------------------------------------------------------- */
     /*  Set up the cosine coefficients.                                     */

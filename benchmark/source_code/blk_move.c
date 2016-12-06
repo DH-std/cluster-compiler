@@ -62,7 +62,12 @@
 /*                           All Rights Reserved.                           */
 /* ======================================================================== */
 
-void DSP_blk_move(short   *x, short *r, int nx)
+void DSP_blk_move
+(
+  short   *x,
+  short *r,
+  int nx
+)
 {
     int i;
 

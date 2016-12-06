@@ -87,9 +87,9 @@ void IMG_yc_demux_le16
 (
     int n,                    /* Number of luma pixels    */
     const unsigned char *yc,  /* Interleaved luma/chroma  */
-    short *restrict y,        /* Luma plane (16-bit)      */
-    short *restrict cr,       /* Cr chroma plane (16-bit) */
-    short *restrict cb        /* Cb chroma plane (16-bit) */
+    short *restrict y,
+    short *restrict cr,
+    short *restrict cb        
 )
 {
     int i;

@@ -19,11 +19,13 @@ static int stepsizeTable[89] = {
 };
 
 
-void DSP_adpcm_decoder(indata, outdata, len, state)
-    char indata[];
-    short outdata[];
-    int len;
-    struct adpcm_state *state;
+void DSP_adpcm_decoder
+(
+  char indata[],
+  short outdata[],
+  int len,
+  struct adpcm_state *state
+)
 {
     signed char *inp;       /* Input buffer pointer */
     short *outp;        /* output buffer pointer */
@@ -44,9 +46,9 @@ void DSP_adpcm_decoder(indata, outdata, len, state)
     step = stepsizeTable[index];
 
     bufferstep = 0;
-    
+
     for ( ; len > 0 ; len-- ) {
-    
+
     /* Step 1 - get the delta value */
     if ( bufferstep ) {
         delta = inputbuffer & 0xf;

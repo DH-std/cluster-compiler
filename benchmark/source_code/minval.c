@@ -49,7 +49,11 @@
 /*                           All Rights Reserved.                           */
 /* ======================================================================== */
 
-short DSP_minval(const short *x, int nx)
+short DSP_minval
+(
+  const short *x,
+  int nx
+)
 {
     int i;
     short min = 32767;

@@ -91,8 +91,8 @@ void IMG_quantize
 (
     short           *restrict data,      /* Data to be quantized.         */
     unsigned short  num_blks,            /* Number of 64-element blocks.  */
-    unsigned short  blk_size,            /* Block size (multiple of 16).  */
-    const short     *restrict recip_tbl, /* Quant. values (reciprocals).  */
+    unsigned short  blk_size,
+    const short     *restrict recip_tbl, 
     int             q_pt                 /* Q-point of Quant values.      */
 )
 {

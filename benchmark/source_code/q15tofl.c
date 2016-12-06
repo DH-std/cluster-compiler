@@ -65,7 +65,12 @@
 /*                           All Rights Reserved.                           */
 /* ======================================================================== */
 
-void DSP_q15tofl(const short *restrict x, float *r, int nx )
+void DSP_q15tofl
+(
+  const short *restrict x,
+  float *r,
+  int nx
+)
 {
     int i;
 

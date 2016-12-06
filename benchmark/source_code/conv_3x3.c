@@ -63,11 +63,14 @@
 /*  IMG_conv_3x3   -- Natural C version of IMG_conv_3x3().                  */
 /* ======================================================================== */
 
-void IMG_conv_3x3(const unsigned char *restrict inptr,
-                 unsigned char       *restrict outptr,
-                 int                 x_dim,
-                 const char          *restrict mask,
-                 int                 shift)
+void IMG_conv_3x3
+(
+  const unsigned char *restrict inptr,
+  unsigned char       *restrict outptr,
+  int                 x_dim,
+  const char          *restrict mask,
+  int                 shift
+)
 {
      const unsigned char     *IN1,*IN2,*IN3;
      unsigned char           *OUT;

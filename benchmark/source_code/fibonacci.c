@@ -1,4 +1,8 @@
-long DSP_fibonacci(int pos) {
+long DSP_fibonacci
+(
+  int pos
+)
+{
   long first, second;
   if (pos == 0) return 0;
   first = 0;
