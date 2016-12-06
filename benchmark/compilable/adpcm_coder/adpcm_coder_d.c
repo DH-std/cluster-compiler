@@ -2061,11 +2061,16 @@ char adpcmdata[DATASIZE/2];
 
 struct adpcm_state coder_1_state;
 
-main() {
+int main() {
     settime();
     adpcm_coder(pcmdata, adpcmdata, DATASIZE, &coder_1_state);
     gettime();
 
-    exit(0);
+    /*for (unsigned i = 0; i < DATASIZE/2; ++i) {
+        printf("\t%d,", adpcmdata[i]);
+        if (i % 5 == 4) printf("\n");
+    }*/
+
+    return 0;
 }
 
