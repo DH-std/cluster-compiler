@@ -1,4 +1,4 @@
-long fibonacci(int pos) {
+long fibonacci_c(int pos) {
   long first, second;
   if (pos == 0) return 0;
   first = 0;
