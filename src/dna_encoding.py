@@ -1,5 +1,4 @@
 import re, os, shutil
-import os
 
 def split_again(words):
     ans = []
@@ -28,7 +27,7 @@ def split_again(words):
 
 def encode_source_file(filename):
     found_beginning = False
-    function_name = filename.split('/')[4].rstrip('.c')
+    function_name = filename.split('/')[3].rstrip('.c')
     print "****************: ", function_name
     dna = ""
     real_content = False
@@ -107,6 +106,7 @@ def main():
     # print split_again('i_data[(i');
     # print re.match('^[a-zA-Z0-9_.-]*$', 'y[2*i+1]')
 
+    '''
     filenames = os.listdir('../benchmark/dsplib/splitted')
     tmp_dir = '../benchmark/dsplib/dna/'
 
@@ -119,17 +119,18 @@ def main():
         dna_file = open(tmp_dir + filename, 'w')
         dna_file.write(ans)
         dna_file.close()
+    '''
 
 
-    filenames = os.listdir('../benchmark/imglib/splitted')
-    tmp_dir = '../benchmark/imglib/dna/'
+    filenames = os.listdir('../benchmark/source_code')
+    tmp_dir = '../output/dna'
 
     if os.path.isdir(tmp_dir):
         shutil.rmtree(tmp_dir)
     os.mkdir(tmp_dir)
 
     for filename in filenames:
-        ans = encode_source_file(os.path.join('../benchmark/imglib/splitted', filename))
+        ans = encode_source_file(os.path.join('../benchmark/source_code', filename))
         dna_file = open(tmp_dir + filename, 'w')
         dna_file.write(ans)
         dna_file.close()
