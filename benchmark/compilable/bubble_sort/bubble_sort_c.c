@@ -1,4 +1,4 @@
-void bubble_sort(int size, int *xp) {
+void bubble_sort_c(int size, int *xp) {
   int i = 0, j = 0;
   for (j = 0; j < size; j += 1) {
     for (i = 0; i < size - 1; i += 1) {
