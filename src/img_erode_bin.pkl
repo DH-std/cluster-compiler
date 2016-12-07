@@ -1,0 +1,10 @@
+(dp0
+S'img_erode_bin'
+p1
+((lp2
+S'-scalarrepl-ssa'
+p3
+aI952
+F18633.23829293251
+tp4
+s.
