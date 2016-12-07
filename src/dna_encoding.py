@@ -123,8 +123,8 @@ def main(argv):
 
     for filename in filenames:
         if ".c" in filename:
-            ans = encode_source_file(os.path.join('../benchmark/dna', filename))
-            dna_file = open(tmp_dir + filename, 'w')
+            ans = encode_source_file(os.path.join('../benchmark/source_code', filename))
+            dna_file = open(tmp_dir + filename[0:-2], 'w')
             dna_file.write(ans)
             dna_file.close()
 
