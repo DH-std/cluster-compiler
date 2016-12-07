@@ -113,6 +113,8 @@
 /*                           All Rights Reserved.                           */
 /* ======================================================================== */
 
+#include <stdlib.h>
+
 void IMG_sobel_c
 (
     const unsigned char *restrict in,   /* Input image data   */
