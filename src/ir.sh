@@ -5,7 +5,7 @@ tar_dir=../benchmark/compilable
 
 make() {
   echo "compile IR for $1"
-  clang -emit-llvm -o $dir/$1.bc -c $tar_dir/$1/$1.c
+  clang -emit-llvm -o $dir/$1 -c $tar_dir/$1/$1.c
 }
 
 if [ ! -d "$dir" ]

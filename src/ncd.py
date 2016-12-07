@@ -22,7 +22,7 @@ def gzip_compression(fname, slowness = 6, **kwargs):
 
 def bzip2_compression(fname, slowness = 6, **kwargs):
   """Compression using bzip2 executable.
-  
+
   @param fname Name of file to compress
   @param slowness Tradeoff parameter: 1 is fastest, 9 is best compression
   @return Size of compressed file in bytes
@@ -136,7 +136,7 @@ def ncd(compression_fn, pairing_fn, fname1, fname2, compressed_sizes = None,
     **kwargs):
   """NCD calculation for a given pair of files.
 
-      The normalized compression distance (NCD) between a pair of objects (x, y) 
+      The normalized compression distance (NCD) between a pair of objects (x, y)
   is defined as
 
                    Z(p(x,y)) - min{ Z(x), Z(y) }
@@ -221,7 +221,7 @@ def _parallel_ncd_worker(args):
 
   compression_fn = compression[compression_name]
   pairing_fn = pairing[pairing_name]
- 
+
   result = ncd(compression_fn, pairing_fn, fname1, fname2, compressed_sizes,
       **kwargs)
 
@@ -239,7 +239,7 @@ def _serial_distance_matrix(fnames, compression_fn, pairing_fn, **kwargs):
   """Serial calculation for distance matrix."""
   sys.stderr.write('Compressing individual files...\n')
   progress_bar = ProgressBar(len(fnames))
-  
+
   def update_progress(fname):
     x = compression_fn(fname)
     progress_bar.increment()
@@ -280,7 +280,7 @@ def _parallel_distance_matrix(fnames, compression_name, pairing_name, **kwargs):
     'cname': compression_name, 'fname': fname,
     'queue': queue, 'kwargs': kwargs}
     for fname in fnames]
- 
+
   async_result = pool.map_async(_parallel_compression_worker, compression_args)
 
   for _ in xrange(len(fnames)):
@@ -376,7 +376,7 @@ def to_matrix(ncd_results):
 
 def phylip_format(ncd_results, alternative_ids = None):
   """Formats a list of NcdResult objects in Phylip format.
-   
+
       The Phylip format is used in phylogenetic software to store distance
   matrices between taxa. Each taxon name is limited to 10 chars, so the
   IDs used in NCD are truncated to satisfy this restriction. The format is as
@@ -397,6 +397,7 @@ def phylip_format(ncd_results, alternative_ids = None):
   if alternative_ids is not None:
     ids = alternative_ids
   names = ['{name:<10.10}'.format(name=id_) for id_ in ids]
+  names = ids
   # TODO(brunokim): Find conflicts and solve them
 
   s = '%d\n' % len(m)
@@ -410,7 +411,7 @@ def phylip_format(ncd_results, alternative_ids = None):
 
 def cli_parser():
   """Returns CLI parser for script.
-  
+
   This may be useful for other scripts willing to call this one.
   """
   parser = argparse.ArgumentParser(
@@ -426,11 +427,11 @@ def cli_parser():
   parser.add_argument('-f', '--format', choices=['csv', 'phylip'],
       help='Choose matrix format (default: csv)')
 
-  compressor_group = parser.add_argument_group('Compressor options', 
+  compressor_group = parser.add_argument_group('Compressor options',
       'Options to control compressor behavior')
   compressor_group.add_argument('--slowness', '--gzip-slowness',
       '--bzip2-slowness', default=6, type=int,
-      help='(gzip, bzip2) slowness of compression (1-9): ' + 
+      help='(gzip, bzip2) slowness of compression (1-9): ' +
       '1 is faster, 9 is best compression')
   compressor_group.add_argument('--model-order', '--ppmd-model-order',
       default=6, type=int,
@@ -442,7 +443,7 @@ def cli_parser():
       help='(interleave) block size for interleaving, in bytes')
 
   misc_group = parser.add_argument_group('General options')
-  
+
   is_serial = misc_group.add_mutually_exclusive_group()
   is_serial.add_argument('--serial', action='store_true',
       help='Compute compressions serially')
@@ -476,7 +477,7 @@ if __name__ == '__main__':
   if a.compressor == 'ppmd' and (
       not os.path.exists('ppmd_tmp') or not os.path.isdir('ppmd_tmp')):
     os.mkdir('ppmd_tmp')
- 
+
   kwargs = {
       'pair_dir': 'tmp',
       'ppmd_tmp_dir': 'ppmd_tmp',
@@ -485,7 +486,7 @@ if __name__ == '__main__':
       'memory': a.memory,
       'block_size': a.block_size,
   }
-  
+
   results = distance_matrix(a.directory, a.compressor, a.pairing,
       is_parallel = not a.serial, verbosity_level = verbose, **kwargs)
 
@@ -493,7 +494,7 @@ if __name__ == '__main__':
     out = phylip_format(results)
   else:
     out = csv_format(results)
-  
+
   if a.output is None:
     print out
   else:
