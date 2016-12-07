@@ -20,14 +20,11 @@ files=(
   "pop_count"   "img_sobel"
 )
 
+
+rm $dir/*
 for infile in ${files[@]}
 do
-  if [ ! -f "$dir/$infile.bc" ]
-  then
-    make $infile
-  else
-    echo "IR for $infile already exists"
-  fi
+  make $infile
 done
 
 echo
