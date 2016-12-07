@@ -1,4 +1,5 @@
 import re, os, shutil
+import sys
 
 def split_again(words):
     ans = []
@@ -105,7 +106,27 @@ def encode_source_file(filename):
 
     return dna
 
-def main():
+def main(argv):
+    tmp_dir = '../output/dna/'
+
+    if os.path.isdir(tmp_dir):
+        shutil.rmtree(tmp_dir)
+    os.mkdir(tmp_dir)
+
+    if len(argv) > 1:
+        filenames = [argv[1] + ".c"]
+        if not os.path.isfile(os.path.join('../benchmark/source_code', filenames[0])):
+            print filenames[0], "not exists"
+            exit(1)
+    else:
+        filenames = os.listdir('../benchmark/source_code')
+
+    for filename in filenames:
+        if ".c" in filename:
+            ans = encode_source_file(os.path.join('../benchmark/source_code', filename))
+            dna_file = open(tmp_dir + filename, 'w')
+            dna_file.write(ans)
+            dna_file.close()
 
     # print split_again('i_data[(i');
     # print re.match('^[a-zA-Z0-9_.-]*$', 'y[2*i+1]')
@@ -126,20 +147,7 @@ def main():
     '''
 
 
-    filenames = os.listdir('../benchmark/source_code')
-    tmp_dir = '../output/dna/'
-
-    if os.path.isdir(tmp_dir):
-        shutil.rmtree(tmp_dir)
-    os.mkdir(tmp_dir)
-
-    for filename in filenames:
-        if ".c" in filename:
-            ans = encode_source_file(os.path.join('../benchmark/source_code', filename))
-            dna_file = open(tmp_dir + filename, 'w')
-            dna_file.write(ans)
-            dna_file.close()
-
 
 if __name__ == "__main__":
-  main()
+  main(sys.argv)
+
