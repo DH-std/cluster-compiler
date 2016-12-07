@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 import os
-import pickle, subprocess, fitness
+import pickle, subprocess, fitness, sys
 
 def insert_method(fnc, S, N):
     currSeq = []
@@ -26,15 +26,33 @@ def insert_method(fnc, S, N):
             refFit = currFit
         else:
             break
-    return bestSeq
+    return bestSeq, bestFit
 
-def main():
+def main(argv):
 
-    function_name = "img_boundary"
-    passlist = ["-loops", "-inline", "-dse"]
-    best_ans = insert_method(function_name, passlist, 1)
-    print best_ans
+    if len(argv) < 3:
+        print "error"
+        return 0
+    function_name = argv[1]
+    search_space = argv[2]
+    if search_space == "reduced":
+        inputfile = open("../output/reduced_space/" + function_name, 'rb')
+        passlist = pickle.load(inputfile)
+        inputfile.close()
+    elif search_space == "full":
+        inputfile = open("full_space.pkl", 'rb')
+        passlist = pickle.load(inputfile)
+        inputfile.close()
+
+    best_seq, best_fit = insert_method(function_name, passlist, 1)
+
+    ans = {"seq": best_seq, "fitness": best_fit}
+
+    outputname = '../output/insertion' + search_space + '/' + function_name + '.pkl'
+    outputfile = open(outputname, 'wb')
+    pickle.dump(ans, outputfile)
+    outputfile.close()
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv)

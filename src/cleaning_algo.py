@@ -1,5 +1,5 @@
 import os
-import pickle, subprocess, fitness
+import pickle, subprocess, fitness, sys
 
 def clean_method(fnc, inputpass):
     best_seq = inputpass[:]
@@ -11,16 +11,32 @@ def clean_method(fnc, inputpass):
         if new_fit <= best_fit:
             best_seq = new_seq[:]
             best_fit = new_fit
-    return best_seq
+    return best_seq, best_fit
 
 
-def main():
+def main(argv):
+    if len(argv) < 3:
+        print "error"
+        return 0
+    function_name = argv[1]
+    search_space = argv[2]
+    if search_space == "reduced":
+        inputfile = open("../output/reduced_space/" + function_name, 'rb')
+        passlist = pickle.load(inputfile)
+        inputfile.close()
+    elif search_space == "full":
+        print "no reduced space"
+        return 0
 
-    function_name = "img_boundary"
-    passlist = ["-loops", "-inline", "-dse"]
-    best_ans = clean_method(function_name, passlist)
-    print best_ans
+    best_seq, best_fit = clean_method(function_name, passlist)
+
+    ans = {"seq": best_seq, "fitness": best_fit}
+
+    outputname = '../output/clean' + search_space + '/' + function_name + '.pkl'
+    outputfile = open(outputname, 'wb')
+    pickle.dump(ans, outputfile)
+    outputfile.close()
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv)
