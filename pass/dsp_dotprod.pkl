@@ -1,0 +1,14 @@
+(dp0
+S'dsp_dotprod'
+p1
+((lp2
+S'-scalarrepl'
+p3
+aS'-loops'
+p4
+aS'-mergefunc'
+p5
+aI962
+F15795.265032052994
+tp6
+s.

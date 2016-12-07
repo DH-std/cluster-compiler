@@ -1,0 +1,12 @@
+(dp0
+S'img_conv_3x3'
+p1
+((lp2
+S'-scalarrepl-ssa'
+p3
+aS'-ipconstprop'
+p4
+aI1670
+F16009.392627954483
+tp5
+s.

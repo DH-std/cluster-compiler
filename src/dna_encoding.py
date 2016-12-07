@@ -1,5 +1,4 @@
 import re, os, shutil
-import os
 
 def split_again(words):
     ans = []
@@ -14,7 +13,7 @@ def split_again(words):
             test = words[i]
             if i+1 < len(words):
                 test = test + words[i+1]
-            if (test == '+=' or test == '++' or test == '>=' or test == '<=' or test == '!=' or test == '<<' or test == '>>' or test == "//" or test == "/*" or test =='*/'):
+            if (test == '+=' or test == '++' or test == '>=' or test == '<=' or test == '!=' or test == '<<' or test == '>>' or test == "//" or test == "/*" or test =='*/' or test == '->'):
                 ans.append(test)
                 i = i + 1
             else:
@@ -28,7 +27,8 @@ def split_again(words):
 
 def encode_source_file(filename):
     found_beginning = False
-    function_name = filename.split('/')[4].rstrip('.c')
+    function_name = filename.split('/')[3].rstrip('.c')
+    print function_name
     print "****************: ", function_name
     dna = ""
     real_content = False
@@ -36,14 +36,17 @@ def encode_source_file(filename):
         for line in f:
             li = line.strip()
             if not li.startswith("/*") and not re.match(r'^\s*$', li):
-                print "---------------------------------------------------"
-                print li
+                # print "---------------------------------------------------"
+                # print li
                 # if '(' in li and ')' in li:
                 #     print li
                 if ("IMG_" in li or "DSP_" in li) and not "include" in li and not ";" in li and not found_beginning:
                     found_beginning = True
-                if ((')' in li and not '(' in li) or ('(' in li and ')' in li and function_name in li)) and found_beginning and not real_content:
+                    print li
+                    continue
+                if (')' in li ) and found_beginning and not real_content:
                     real_content = True
+                    print li
 
                 if real_content:
                     wl = li.split(' ')
@@ -56,7 +59,7 @@ def encode_source_file(filename):
                         else:
                             rwl = rwl + split_again(ws)
 
-                    print rwl
+                    # print rwl
                     for index,w in enumerate(rwl):
                     # w = w.strip(';').strip('(').strip(')').strip('{').strip('}')
                         if w == "/*" or w == "//":
@@ -96,9 +99,9 @@ def encode_source_file(filename):
                                     else:
                                         dna = dna.rstrip('I')
                                         dna += 'W'
-                            elif re.match('^[a-zA-Z0-9_.-/*]*$', w) and not re.match('if|else|int|short|unsigned|char|const|long', w) and not w[0].isdigit():
+                            elif re.match('^[a-zA-Z0-9_.-/*]*$', w) and not re.match('if|else|int|short|signed|unsigned|char|const|long', w) and not w[0].isdigit():
                                 dna += 'I'
-                print dna
+                # print dna
 
     return dna
 
@@ -107,6 +110,7 @@ def main():
     # print split_again('i_data[(i');
     # print re.match('^[a-zA-Z0-9_.-]*$', 'y[2*i+1]')
 
+    '''
     filenames = os.listdir('../benchmark/dsplib/splitted')
     tmp_dir = '../benchmark/dsplib/dna/'
 
@@ -119,21 +123,22 @@ def main():
         dna_file = open(tmp_dir + filename, 'w')
         dna_file.write(ans)
         dna_file.close()
+    '''
 
 
-    filenames = os.listdir('../benchmark/imglib/splitted')
-    tmp_dir = '../benchmark/imglib/dna/'
+    filenames = os.listdir('../benchmark/source_code')
+    tmp_dir = '../output/dna/'
 
     if os.path.isdir(tmp_dir):
         shutil.rmtree(tmp_dir)
     os.mkdir(tmp_dir)
 
     for filename in filenames:
-        ans = encode_source_file(os.path.join('../benchmark/imglib/splitted', filename))
-        dna_file = open(tmp_dir + filename, 'w')
-        dna_file.write(ans)
-        dna_file.close()
-
+        if ".c" in filename:
+            ans = encode_source_file(os.path.join('../benchmark/source_code', filename))
+            dna_file = open(tmp_dir + filename, 'w')
+            dna_file.write(ans)
+            dna_file.close()
 
 
 if __name__ == "__main__":
