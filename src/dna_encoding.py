@@ -134,11 +134,11 @@ def main():
     os.mkdir(tmp_dir)
 
     for filename in filenames:
-        ans = encode_source_file(os.path.join('../benchmark/source_code', filename))
-        dna_file = open(tmp_dir + filename, 'w')
-        dna_file.write(ans)
-        dna_file.close()
-
+        if ".c" in filename:
+            ans = encode_source_file(os.path.join('../benchmark/source_code', filename))
+            dna_file = open(tmp_dir + filename, 'w')
+            dna_file.write(ans)
+            dna_file.close()
 
 
 if __name__ == "__main__":
