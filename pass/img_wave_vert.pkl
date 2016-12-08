@@ -1,0 +1,12 @@
+(dp0
+S'img_wave_vert'
+p1
+((lp2
+S'-scalarrepl-ssa'
+p3
+aS'-scalar-evolution'
+p4
+aI855
+F1257.8271119594574
+tp5
+s.
