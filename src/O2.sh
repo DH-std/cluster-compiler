@@ -30,6 +30,7 @@ do
   echo "$f:" >> $outfile
   time (make $f 2>> /dev/null) 2>> $outfile
 
+  rm time.output
   for i in {1..12}
   do
     ./$f.opt.exe > /dev/null
