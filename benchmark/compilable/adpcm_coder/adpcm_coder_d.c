@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "adpcm_coder.h"
+#include "support.h"
 
 #define DATASIZE 10*1024    /* Data block size */
 #define DURATION 10     /* How many seconds to measure */
