@@ -83,5 +83,5 @@ if __name__ == '__main__':
     similarFunc = getSimilarFunc(functionName, source, tree)
     passes = merge(source, similarFunc)
     fn = os.path.join(os.path.dirname(__file__),
-                      "../output/initialSpace/" + source)
+                      "../output/reduced_space/" + source)
     pickle.dump(passes, open(fn, 'wb'))
