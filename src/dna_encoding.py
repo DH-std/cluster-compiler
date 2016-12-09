@@ -109,45 +109,53 @@ def encode_source_file(filename):
 def main(argv):
     tmp_dir = '../output/dna/'
 
-    if os.path.isdir(tmp_dir):
-        shutil.rmtree(tmp_dir)
-    os.mkdir(tmp_dir)
-
     if len(argv) > 1:
-        filenames = [argv[1] + ".c"]
-        if not os.path.isfile(os.path.join('../benchmark/source_code', filenames[0])):
+        dna_folder = '../output/dna_one_function/'
+
+        if os.path.isdir(dna_folder):
+            shutil.rmtree(dna_folder)
+        os.mkdir(dna_folder)
+
+        filename = argv[1] + ".c"
+
+        if not os.path.isfile(os.path.join('../benchmark/source_code/', filename)):
             print filenames[0], "not exists"
             exit(1)
+
+        ans = encode_source_file(os.path.join('../benchmark/source_code', filename))
+        dna_file = open(dna_folder + filename[0:-2], 'w')
+        dna_file.write(ans)
+        dna_file.close()
+
+        files = ['adpcm_coder' , 'adpcm_decoder', 'dsp_autocor', 'bubble_sort', 'dsp_dotprod', 'img_fdct_8x8', 'fibonacci', 'dsp_maxval', 'dsp_minval', 'pop_count', 'img_sobel']
+
+        for ref_file in files:
+            ref_file_fullname = os.path.join(tmp_dir, ref_file)
+            if os.path.isfile(ref_file_fullname):
+                shutil.copy2(ref_file_fullname, dna_folder)
+            else:
+                ans = encode_source_file(os.path.join('../benchmark/source_code', ref_file+'.c'))
+                dna_file = open(tmp_dir + ref_file, 'w')
+                dna_file.write(ans)
+                dna_file.close()
+                shutil.copy2(ref_file_fullname, dna_folder)
+
     else:
+        if os.path.isdir(tmp_dir):
+            shutil.rmtree(tmp_dir)
+        os.mkdir(tmp_dir)
         filenames = os.listdir('../benchmark/source_code')
 
-    for filename in filenames:
-        if ".c" in filename:
-            ans = encode_source_file(os.path.join('../benchmark/source_code', filename))
-            dna_file = open(tmp_dir + filename[0:-2], 'w')
-            dna_file.write(ans)
-            dna_file.close()
+        for filename in filenames:
+            if ".c" in filename:
+                ans = encode_source_file(os.path.join('../benchmark/source_code', filename))
+                dna_file = open(tmp_dir + filename[0:-2], 'w')
+                dna_file.write(ans)
+                dna_file.close()
 
     # print split_again('i_data[(i');
     # print re.match('^[a-zA-Z0-9_.-]*$', 'y[2*i+1]')
 
-    '''
-    filenames = os.listdir('../benchmark/dsplib/splitted')
-    tmp_dir = '../benchmark/dsplib/dna/'
-
-    if os.path.isdir(tmp_dir):
-        shutil.rmtree(tmp_dir)
-    os.mkdir(tmp_dir)
-
-    for filename in filenames:
-        ans = encode_source_file(os.path.join('../benchmark/dsplib/splitted', filename))
-        dna_file = open(tmp_dir + filename, 'w')
-        dna_file.write(ans)
-        dna_file.close()
-    '''
-
-
 
 if __name__ == "__main__":
   main(sys.argv)
-
