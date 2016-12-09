@@ -2,7 +2,7 @@ import pickle
 from ga import ga
 import time
 
-funcs = ['dsp_vecsumsq', 'dsp_w_vec', 'dsp_minerror', 'dsp_maxidx']
+funcs = ['dsp_idct_8x8']
 
 for f in funcs:
     results = {}
