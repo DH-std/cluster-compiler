@@ -44,7 +44,7 @@ def main(argv):
         passlist = pickle.load(inputfile)
         inputfile.close()
 
-    best_seq, best_fit = insert_method(function_name, passlist, 1, [])
+    best_seq, best_fit = insert_method(function_name, passlist, 3, [])
 
     ans = {"seq": best_seq, "fitness": best_fit}
 
