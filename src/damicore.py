@@ -96,7 +96,6 @@ if __name__ == '__main__':
   # Outputs tree in Newick format
   if a.tree_output is not None:
     tree = d['tree']
-    print tree
     with open(a.tree_output, 'wt') as f:
       f.write(newick_format(tree))
 
