@@ -1,0 +1,14 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-scalarrepl-ssa'
+p3
+aS'-loops'
+p4
+aS'-simplifycfg'
+p5
+asS'fitness'
+p6
+I705
+s.

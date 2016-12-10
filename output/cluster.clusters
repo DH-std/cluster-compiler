@@ -1,0 +1,12 @@
+filename,cluster
+bubble_sort	0
+pop_count	0
+dsp_maxval	2
+dsp_autocor	2
+adpcm_decoder	0
+img_fdct_8x8	0
+adpcm_coder	0
+dsp_minval	2
+fibonacci	0
+dsp_dotprod	2
+img_sobel	1

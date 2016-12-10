@@ -17,7 +17,7 @@ def clean_insertion(passes, functionName):
     midSeq, midFit = cleaning_algo.clean_method(functionName, passes)
     bestSeq, bestFit = insertion.insert_method(functionName,
                                                fullSpace,
-                                               3,
+                                               1,
                                                midSeq)
     return bestSeq, bestFit
 
