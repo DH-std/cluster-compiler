@@ -12,6 +12,7 @@ Installation
 - python 2.7
 - easy_install: sudo apt-get install python-setuptools python-dev build-essential 
 - pip: sudo easy_install pip 
+- make: sudo apt-get install build-essential
 - igraph library:
   - Download: http://igraph.org/nightly/get/c/igraph-0.7.1.tar.gz
   - Commands: (may need sudo)
