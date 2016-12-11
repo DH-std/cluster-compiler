@@ -7,3 +7,18 @@ src/fitness.py
 - used for calculate fitness scores
 - import fitness
 - fitness.evaluate(function_name, list_of_passes_including_dash)
+
+Installation
+- python 2.7
+- easy_install: sudo apt-get install python-setuptools python-dev build-essential 
+- pip: sudo easy_install pip 
+- igraph library:
+  - Download: http://igraph.org/nightly/get/c/igraph-0.7.1.tar.gz
+  - Commands: (may need sudo)
+      ./configure
+      make
+      make check
+      make install
+- python-igraph: (sudo) pip install python-igraph
+- Numpy: sudo apt-get install python-numpy
+- Bio: sudo easy_install -f http://biopython.org/DIST/ biopython
