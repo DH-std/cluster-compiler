@@ -15,7 +15,6 @@ def readFuncName():
     functionName = []
     for line in f:
         elements = line.split()
-        print elements
         functionName.append(elements[0])
     f.close()
     return functionName
