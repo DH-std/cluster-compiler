@@ -17,7 +17,8 @@ Installation
     1. sudo apt-get install libxml2-dev
     2. sudo apt-get install libz-dev
 - igraph library:
-  - Download: http://igraph.org/nightly/get/c/igraph-0.7.1.tar.gz
+  - sudo apt-get install python-igraph
+  - If the above method failed, download: http://igraph.org/nightly/get/c/igraph-0.7.1.tar.gz
   - Commands: (may need sudo)
       1. ./configure
       2. make
