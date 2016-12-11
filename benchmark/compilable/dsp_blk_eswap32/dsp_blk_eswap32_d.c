@@ -18,10 +18,9 @@
 #include <stdio.h> 
 #include <stdlib.h>
 
-
 /* Header file for the DSPLIB function */
 #include "DSP_blk_eswap32.h"
-#include "support.h"    
+#include "support.h"
 
 /* Header file for the C function */
 void DSP_blk_eswap32_c(void * x, void * r, int nx);
@@ -87,7 +86,7 @@ int main()
     settime();
     DSP_blk_eswap32(x, r_asm, NX);
     gettime();
-    
+
 /* ======================================================================== */
 /*  Call natural-C version                                                  */
 /* ======================================================================== */

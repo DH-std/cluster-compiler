@@ -4,8 +4,8 @@
 import os
 import pickle, subprocess, fitness, sys
 
-def insert_method(fnc, S, N):
-    currSeq = []
+def insert_method(fnc, S, N, initial_seq):
+    currSeq = initial_seq
     currFit = fitness.evaluate(fnc, currSeq)
     refFit = currFit
     for i in range(N):
@@ -44,7 +44,7 @@ def main(argv):
         passlist = pickle.load(inputfile)
         inputfile.close()
 
-    best_seq, best_fit = insert_method(function_name, passlist, 1)
+    best_seq, best_fit = insert_method(function_name, passlist, 3, [])
 
     ans = {"seq": best_seq, "fitness": best_fit}
 

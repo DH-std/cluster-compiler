@@ -18,10 +18,9 @@
 #include <stdio.h> 
 #include <stdlib.h>
 
-
 /* Header file for the DSPLIB function */
-#include "DSP_blk_eswap64.h"  
-#include "support.h"  
+#include "DSP_blk_eswap64.h"    
+#include "support.h"
 
 /* Header file for the C function */
 void DSP_blk_eswap64_c(void * x, void * r, int nx);

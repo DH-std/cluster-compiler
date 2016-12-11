@@ -25,7 +25,7 @@ def main(argv):
         passlist = pickle.load(inputfile)
         inputfile.close()
     elif search_space == "full":
-        print "no reduced space"
+        print "no full space"
         return 0
 
     best_seq, best_fit = clean_method(function_name, passlist)

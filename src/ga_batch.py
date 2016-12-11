@@ -2,8 +2,7 @@ import pickle
 from ga import ga
 import time
 
-funcs = ['dsp_idct_8x8']
-
+funcs = ['img_wave_horz', 'img_wave_vert', 'img_sad_8x8', 'img_sad_16x16']
 for f in funcs:
     results = {}
     start = time.time()

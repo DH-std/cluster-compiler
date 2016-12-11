@@ -2,7 +2,7 @@ import pickle
 from ga import ga
 import time
 
-funcs = ['bubble_sort', 'dsp_dotprod', 'img_conv_3x3', 'img_dilate_bin', 'img_fdct_8x8', 'img_mad_16x16', 'img_mad_8x8']
+funcs = ['img_yc_demux_le16', 'dsp_blk_eswap64', 'dsp_blk_eswap32']
 
 for f in funcs:
     results = {}
