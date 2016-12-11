@@ -13,6 +13,9 @@ Installation
 - easy_install: sudo apt-get install python-setuptools python-dev build-essential 
 - pip: sudo easy_install pip 
 - make: sudo apt-get install build-essential
+- Additional library: 
+    1. sudo apt-get install libxml2-dev
+    2. sudo apt-get install libz-dev
 - igraph library:
   - Download: http://igraph.org/nightly/get/c/igraph-0.7.1.tar.gz
   - Commands: (may need sudo)
