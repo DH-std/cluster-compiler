@@ -15,10 +15,10 @@ Installation
 - igraph library:
   - Download: http://igraph.org/nightly/get/c/igraph-0.7.1.tar.gz
   - Commands: (may need sudo)
-      ./configure
-      make
-      make check
-      make install
+      1. ./configure
+      2. make
+      3. make check
+      4. make install
 - python-igraph: (sudo) pip install python-igraph
 - Numpy: sudo apt-get install python-numpy
 - Bio: sudo easy_install -f http://biopython.org/DIST/ biopython
