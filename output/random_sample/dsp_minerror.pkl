@@ -1,0 +1,12 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-scalarrepl'
+p3
+aS'-lowerinvoke'
+p4
+asS'fitness'
+p5
+I2806
+s.

@@ -1,0 +1,14 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-loops'
+p3
+aS'-die'
+p4
+aS'-dce'
+p5
+asS'fitness'
+p6
+I1858
+s.
