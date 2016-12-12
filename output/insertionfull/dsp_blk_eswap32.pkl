@@ -1,0 +1,16 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-scalarrepl'
+p3
+aS'-scalar-evolution'
+p4
+aS'-sink'
+p5
+aS'-loop-rotate'
+p6
+asS'fitness'
+p7
+I575
+s.

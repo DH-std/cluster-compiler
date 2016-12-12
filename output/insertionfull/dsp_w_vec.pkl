@@ -1,0 +1,14 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-always-inline'
+p3
+aS'-inline'
+p4
+aS'-adce'
+p5
+asS'fitness'
+p6
+I977
+s.
