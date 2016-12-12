@@ -3,7 +3,6 @@ from ga import ga
 import time
 
 funcs = ['img_wave_horz', 'img_wave_vert', 'img_sad_8x8', 'img_sad_16x16']
-
 for f in funcs:
     results = {}
     start = time.time()
