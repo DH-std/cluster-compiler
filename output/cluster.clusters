@@ -1,13 +1,13 @@
 filename,cluster
-bubble_sort	2
-pop_count	2
+bubble_sort	8
+pop_count	10
 dsp_maxval	1
-dsp_autocor	3
-adpcm_decoder	2
-img_fdct_8x8	2
-adpcm_coder	2
-img_erode_bin	0
+dsp_autocor	0
+adpcm_decoder	7
+img_fdct_8x8	3
+adpcm_coder	6
 dsp_minval	1
-fibonacci	2
-dsp_dotprod	3
-img_sobel	0
+fibonacci	9
+dsp_dotprod	1
+img_sobel	2
+dsp_mat_mul	0
