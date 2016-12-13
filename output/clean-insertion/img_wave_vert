@@ -1,11 +1,10 @@
-(lp0
-S'-scalarrepl'
+(dp0
+S'seq'
 p1
-aS'-loop-idiom'
-p2
-aS'-argpromotion'
+(lp2
+S'-scalarrepl'
 p3
-aS'-dce'
+aS'-constmerge'
 p4
 aS'-constmerge'
 p5
@@ -23,4 +22,7 @@ aS'-sccp'
 p11
 aS'-lowerinvoke'
 p12
-a.
+asS'fitness'
+p13
+I897
+s.
