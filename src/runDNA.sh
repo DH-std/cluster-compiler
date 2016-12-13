@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for file in "img_boundary" "img_corr_gen" "img_wave_vert" "img_erode_bin"
+for file in "dsp_autocor" "dsp_dotprod" "img_fdct_8x8" "dsp_neg3"
 do
   echo "$file"
   rm "../output/time/$file"
@@ -29,7 +29,7 @@ do
   echo "clean reduced: $duration" >> "../output/time/$file"
   echo "clean-insertion"
   SECONDS=0
-  python clean_insertion.py $file
+  #python clean_insertion.py $file
   duration=$SECONDS
   echo "clean-insertion: $duration" >> "../output/time/$file"
   echo "insertion-clean"
