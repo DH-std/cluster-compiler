@@ -1,0 +1,14 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-adce'
+p3
+aS'-argpromotion'
+p4
+aS'-prune-eh'
+p5
+asS'fitness'
+p6
+I0
+s.

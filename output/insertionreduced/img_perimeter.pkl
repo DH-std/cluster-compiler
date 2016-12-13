@@ -1,0 +1,16 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-scalarrepl'
+p3
+aS'-argpromotion'
+p4
+aS'-loop-idiom'
+p5
+aS'-functionattrs'
+p6
+asS'fitness'
+p7
+I1527
+s.
