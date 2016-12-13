@@ -2,13 +2,11 @@
 S'seq'
 p1
 (lp2
-S'-loops'
+S'-scalarrepl'
 p3
-aS'-die'
+aS'-scalar-evolution'
 p4
-aS'-dce'
-p5
 asS'fitness'
-p6
-I1858
+p5
+I2560
 s.
