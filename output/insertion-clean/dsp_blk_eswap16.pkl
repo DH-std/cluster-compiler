@@ -2,8 +2,9 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl'
+sS'fitness'
 p3
+<<<<<<< ours
 aS'-scalar-evolution'
 p4
 aS'-memdep'
@@ -19,4 +20,7 @@ p9
 asS'fitness'
 p10
 I738
+=======
+I1
+>>>>>>> theirs
 s.

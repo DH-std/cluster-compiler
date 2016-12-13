@@ -2,11 +2,15 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl'
+sS'fitness'
 p3
+<<<<<<< ours
 aS'-instsimplify'
 p4
 asS'fitness'
 p5
 I751
+=======
+I1
+>>>>>>> theirs
 s.

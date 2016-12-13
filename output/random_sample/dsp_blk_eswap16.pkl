@@ -2,8 +2,9 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl'
+S'-lowerinvoke'
 p3
+<<<<<<< ours
 aS'-instsimplify'
 p4
 aS'-loop-rotate'
@@ -11,4 +12,11 @@ p5
 asS'fitness'
 p6
 I616
+=======
+aS'-loop-unroll'
+p4
+asS'fitness'
+p5
+I1
+>>>>>>> theirs
 s.

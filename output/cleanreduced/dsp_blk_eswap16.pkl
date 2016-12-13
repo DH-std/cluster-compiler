@@ -2,8 +2,9 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl'
+sS'fitness'
 p3
+<<<<<<< ours
 aS'-early-cse'
 p4
 aS'-instsimplify'
@@ -15,4 +16,7 @@ p7
 asS'fitness'
 p8
 I720
+=======
+I1
+>>>>>>> theirs
 s.

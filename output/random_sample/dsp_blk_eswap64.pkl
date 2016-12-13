@@ -4,9 +4,9 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-aS'-argpromotion'
+aS'-loop-unroll'
 p4
 asS'fitness'
 p5
-I703
+I780
 s.

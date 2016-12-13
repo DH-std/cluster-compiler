@@ -2,13 +2,7 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl-ssa'
+sS'fitness'
 p3
-aS'-scalarrepl'
-p4
-aS'-loop-reduce'
-p5
-asS'fitness'
-p6
-I848
+I1
 s.
