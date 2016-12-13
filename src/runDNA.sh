@@ -29,7 +29,7 @@ do
   echo "clean reduced: $duration" >> "../output/time/$file"
   echo "clean-insertion"
   SECONDS=0
-  python clean_insertion.py $file
+  python cic.py $file
   duration=$SECONDS
   echo "clean-insertion: $duration" >> "../output/time/$file"
   echo "insertion-clean"
