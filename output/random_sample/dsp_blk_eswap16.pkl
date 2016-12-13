@@ -4,7 +4,11 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-asS'fitness'
+aS'-instsimplify'
 p4
-I535
+aS'-loop-rotate'
+p5
+asS'fitness'
+p6
+I616
 s.

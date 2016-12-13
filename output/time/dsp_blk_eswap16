@@ -5,3 +5,8 @@ clean reduced: 1
 clean-insertion: 204
 insertion-clean: 202
 CIC: 1904
+ga reduced: 113
+insert reduced: 6
+clean reduced: 4
+clean-insertion: 291
+insertion-clean: 237

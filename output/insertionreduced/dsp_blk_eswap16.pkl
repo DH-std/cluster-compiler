@@ -4,7 +4,9 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-asS'fitness'
+aS'-instsimplify'
 p4
-I539
+asS'fitness'
+p5
+I751
 s.
