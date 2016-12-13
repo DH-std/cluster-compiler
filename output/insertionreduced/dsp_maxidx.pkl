@@ -2,13 +2,13 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl'
+S'-scalarrepl-ssa'
 p3
-aS'-sccp'
+aS'-constmerge'
 p4
-aS'-reassociate'
+aS'-adce'
 p5
 asS'fitness'
 p6
-I704
+I882
 s.
