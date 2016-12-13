@@ -2,13 +2,11 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl'
+S'-scalarrepl-ssa'
 p3
-aS'-early-cse'
+aS'-loop-rotate'
 p4
-aS'-instsimplify'
-p5
 asS'fitness'
-p6
-I1295
+p5
+I1233
 s.

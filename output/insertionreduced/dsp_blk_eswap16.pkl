@@ -2,9 +2,7 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl'
+sS'fitness'
 p3
-asS'fitness'
-p4
-I539
+I1
 s.
