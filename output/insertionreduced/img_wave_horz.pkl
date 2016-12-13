@@ -4,11 +4,13 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-aS'-early-cse'
+aS'-dce'
 p4
-aS'-mergefunc'
+aS'-scalar-evolution'
 p5
-asS'fitness'
+aS'-loop-idiom'
 p6
-I8082
+asS'fitness'
+p7
+I7916
 s.
