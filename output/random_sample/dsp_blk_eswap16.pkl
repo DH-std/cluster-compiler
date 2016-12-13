@@ -2,9 +2,11 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl'
+S'-lowerinvoke'
 p3
-asS'fitness'
+aS'-loop-unroll'
 p4
-I535
+asS'fitness'
+p5
+I1
 s.

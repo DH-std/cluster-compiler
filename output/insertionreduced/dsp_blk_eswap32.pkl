@@ -4,13 +4,9 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-aS'-constmerge'
+aS'-loop-unroll'
 p4
-aS'-loop-idiom'
-p5
-aS'-argpromotion'
-p6
 asS'fitness'
-p7
-I556
+p5
+I676
 s.
