@@ -2,9 +2,21 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl'
+sS'fitness'
 p3
-asS'fitness'
+<<<<<<< ours
+aS'-early-cse'
 p4
-I606
+aS'-instsimplify'
+p5
+aS'-loop-rotate'
+p6
+aS'-lowerinvoke'
+p7
+asS'fitness'
+p8
+I720
+=======
+I1
+>>>>>>> theirs
 s.

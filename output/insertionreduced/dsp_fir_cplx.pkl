@@ -4,7 +4,13 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-asS'fitness'
+aS'-early-cse'
 p4
-I845
+aS'-scalar-evolution'
+p5
+aS'-instsimplify'
+p6
+asS'fitness'
+p7
+I799
 s.
