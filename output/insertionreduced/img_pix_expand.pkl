@@ -1,0 +1,16 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-scalarrepl'
+p3
+aS'-instsimplify'
+p4
+aS'-lowerinvoke'
+p5
+aS'-scalar-evolution'
+p6
+asS'fitness'
+p7
+I1957
+s.

@@ -1,0 +1,14 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-scalarrepl'
+p3
+aS'-loop-deletion'
+p4
+aS'-scalar-evolution'
+p5
+asS'fitness'
+p6
+I1300
+s.
