@@ -4,7 +4,13 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-asS'fitness'
+aS'-loop-unroll'
 p4
-I9972
+aS'-sccp'
+p5
+aS'-functionattrs'
+p6
+asS'fitness'
+p7
+I10875
 s.
