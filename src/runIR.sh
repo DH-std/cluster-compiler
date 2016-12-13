@@ -1,5 +1,5 @@
 #!/bin/bash
-for file in "dsp_dotprod"
+for file in "dsp_minerror"
 do
   ./ir.sh $file
   echo "$file"
@@ -11,11 +11,11 @@ do
   python random_sample.py $file reduced
   duration=$SECONDS
   echo "ga reduced: $duration" >> "../output/time/$file"
-  echo "insertion full"
-  SECONDS=0
-  python insertion.py $file full
-  duration=$SECONDS
-  echo "insertion reduced: $duration" >> "../output/time/$file"
+  #echo "insertion full"
+  #SECONDS=0
+  #python insertion.py $file full
+  #duration=$SECONDS
+  #echo "insertion reduced: $duration" >> "../output/time/$file"
   echo "insertion reduced"
   SECONDS=0
   python insertion.py $file reduced
