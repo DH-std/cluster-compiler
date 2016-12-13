@@ -4,13 +4,13 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-aS'-reassociate'
+aS'-dce'
 p4
-aS'-sccp'
+aS'-loop-idiom'
 p5
-aS'-scalar-evolution'
+aS'-argpromotion'
 p6
 asS'fitness'
 p7
-I994
+I1057
 s.
