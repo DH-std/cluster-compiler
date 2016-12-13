@@ -2,15 +2,7 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl'
+sS'fitness'
 p3
-aS'-reassociate'
-p4
-aS'-sccp'
-p5
-aS'-scalar-evolution'
-p6
-asS'fitness'
-p7
-I994
+I1
 s.

@@ -10,3 +10,8 @@
 *.input
 *.output
 *.pem
+output/cluster.clusters
+output/ncd.phylip
+output/tree.newick
+src/nohup.out
+benchmark/IRs/*
