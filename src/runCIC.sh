@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for file in "dsp_blk_eswap32" "dsp_blk_eswap64" "dsp_blk_move" "dsp_dotp_sqr"
+for file in "dsp_neg32" "dsp_q15tofl" "dsp_vecsumsq" "dsp_w_vec" "dsp_mul32"
 do
   echo "$file"
   python dna_encoding.py $file
