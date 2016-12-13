@@ -4,11 +4,7 @@ p1
 (lp2
 S'-scalarrepl-ssa'
 p3
-aS'-constmerge'
-p4
-aS'-adce'
-p5
 asS'fitness'
-p6
-I882
+p4
+I375
 s.
