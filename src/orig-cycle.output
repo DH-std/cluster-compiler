@@ -1,0 +1,424 @@
+
+adpcm_coder:
+
+real	0m0.146s
+user	0m0.084s
+sys	0m0.020s
+
+cycle: 313247
+
+
+adpcm_decoder:
+
+real	0m0.117s
+user	0m0.064s
+sys	0m0.032s
+
+cycle: 253535
+
+
+bubble_sort:
+
+real	0m0.107s
+user	0m0.060s
+sys	0m0.020s
+
+cycle: 1363
+
+
+dsp_autocor:
+
+real	0m0.106s
+user	0m0.072s
+sys	0m0.008s
+
+cycle: 2374
+
+
+dsp_bexp:
+
+real	0m0.109s
+user	0m0.064s
+sys	0m0.020s
+
+cycle: 2648
+
+
+dsp_blk_eswap16:
+
+real	0m0.108s
+user	0m0.052s
+sys	0m0.028s
+
+cycle: 1304
+
+
+dsp_blk_eswap32:
+
+real	0m0.115s
+user	0m0.060s
+sys	0m0.024s
+
+cycle: 1205
+
+
+dsp_blk_eswap64:
+
+real	0m0.109s
+user	0m0.064s
+sys	0m0.020s
+
+cycle: 1205
+
+
+dsp_blk_move:
+
+real	0m0.108s
+user	0m0.060s
+sys	0m0.024s
+
+cycle: 690
+
+
+dsp_dotprod:
+
+real	0m0.115s
+user	0m0.072s
+sys	0m0.012s
+
+cycle: 702
+
+
+dsp_dotp_sqr:
+
+real	0m0.107s
+user	0m0.072s
+sys	0m0.012s
+
+cycle: 926
+
+
+dsp_fir_cplx:
+
+real	0m0.109s
+user	0m0.060s
+sys	0m0.020s
+
+cycle: 1554
+
+
+dsp_firlms2:
+
+real	0m0.107s
+user	0m0.064s
+sys	0m0.016s
+
+cycle: 615
+
+
+dsp_mat_mul:
+
+real	0m0.119s
+user	0m0.060s
+sys	0m0.028s
+
+cycle: 10352
+
+
+dsp_mat_trans:
+
+real	0m0.109s
+user	0m0.076s
+sys	0m0.008s
+
+cycle: 4545
+
+
+dsp_maxidx:
+
+real	0m0.112s
+user	0m0.064s
+sys	0m0.020s
+
+cycle: 1205
+
+
+dsp_maxval:
+
+real	0m0.106s
+user	0m0.068s
+sys	0m0.008s
+
+cycle: 914
+
+
+dsp_minerror:
+
+real	0m0.112s
+user	0m0.068s
+sys	0m0.016s
+
+cycle: 6373
+
+
+dsp_minval:
+
+real	0m0.107s
+user	0m0.064s
+sys	0m0.016s
+
+cycle: 890
+
+
+dsp_mul32:
+
+real	0m0.107s
+user	0m0.072s
+sys	0m0.004s
+
+cycle: 2278
+
+
+dsp_neg32:
+
+real	0m0.113s
+user	0m0.064s
+sys	0m0.024s
+
+cycle: 2780
+
+
+dsp_q15tofl:
+
+real	0m0.116s
+user	0m0.072s
+sys	0m0.016s
+
+cycle: 687
+
+
+dsp_vecsumsq:
+
+real	0m0.106s
+user	0m0.056s
+sys	0m0.024s
+
+cycle: 1398
+
+
+dsp_w_vec:
+
+real	0m0.113s
+user	0m0.060s
+sys	0m0.028s
+
+cycle: 1200
+
+
+fibonacci:
+
+real	0m0.111s
+user	0m0.064s
+sys	0m0.020s
+
+cycle: 669
+
+
+img_boundary:
+
+real	0m0.110s
+user	0m0.080s
+sys	0m0.004s
+
+cycle: 1773
+
+
+img_conv_3x3:
+
+real	0m0.108s
+user	0m0.060s
+sys	0m0.016s
+
+cycle: 6724
+
+
+img_corr_gen:
+
+real	0m0.109s
+user	0m0.076s
+sys	0m0.012s
+
+cycle: 20344
+
+
+img_dilate_bin:
+
+real	0m0.118s
+user	0m0.064s
+sys	0m0.028s
+
+cycle: 1911
+
+
+img_erode_bin:
+
+real	0m0.118s
+user	0m0.072s
+sys	0m0.028s
+
+cycle: 1777
+
+
+img_fdct_8x8:
+
+real	0m0.132s
+user	0m0.084s
+sys	0m0.024s
+
+cycle: 4086
+
+
+img_idct_8x8_12q4:
+
+real	0m0.138s
+user	0m0.092s
+sys	0m0.024s
+
+cycle: 6067
+
+
+img_mad_16x16:
+
+real	0m0.129s
+user	0m0.072s
+sys	0m0.016s
+
+cycle: 1887384
+
+
+img_mad_8x8:
+
+real	0m0.111s
+user	0m0.064s
+sys	0m0.020s
+
+cycle: 5214
+
+
+img_median_3x3:
+
+real	0m0.112s
+user	0m0.068s
+sys	0m0.016s
+
+cycle: 18610
+
+
+img_perimeter:
+
+real	0m0.120s
+user	0m0.076s
+sys	0m0.020s
+
+cycle: 5293
+
+
+img_pix_expand:
+
+real	0m0.108s
+user	0m0.072s
+sys	0m0.008s
+
+cycle: 5118
+
+
+img_pix_sat:
+
+real	0m0.106s
+user	0m0.056s
+sys	0m0.020s
+
+cycle: 10660
+
+
+img_quantize:
+
+real	0m0.108s
+user	0m0.064s
+sys	0m0.016s
+
+cycle: 955
+
+
+img_sad_16x16:
+
+real	0m0.117s
+user	0m0.064s
+sys	0m0.024s
+
+cycle: 1860
+
+
+img_sad_8x8:
+
+real	0m0.106s
+user	0m0.064s
+sys	0m0.016s
+
+cycle: 1247
+
+
+img_sobel:
+
+real	0m0.123s
+user	0m0.080s
+sys	0m0.012s
+
+cycle: 4619
+
+
+img_wave_horz:
+
+real	0m0.112s
+user	0m0.060s
+sys	0m0.024s
+
+cycle: 9633
+
+
+img_wave_vert:
+
+real	0m0.109s
+user	0m0.052s
+sys	0m0.032s
+
+cycle: 2005
+
+
+img_yc_demux_be16:
+
+real	0m0.108s
+user	0m0.068s
+sys	0m0.008s
+
+cycle: 501
+
+
+img_yc_demux_le16:
+
+real	0m0.108s
+user	0m0.056s
+sys	0m0.028s
+
+cycle: 692
+
+
+pop_count:
+
+real	0m0.105s
+user	0m0.064s
+sys	0m0.012s
+
+cycle: 670
+
+
