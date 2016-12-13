@@ -1,0 +1,14 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-adce'
+p3
+aS'-constmerge'
+p4
+aS'-early-cse'
+p5
+asS'fitness'
+p6
+I486
+s.

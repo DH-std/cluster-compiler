@@ -1,0 +1,14 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-scalarrepl'
+p3
+aS'-early-cse'
+p4
+aS'-mergefunc'
+p5
+asS'fitness'
+p6
+I8082
+s.

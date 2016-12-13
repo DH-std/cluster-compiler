@@ -1,0 +1,16 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-scalarrepl'
+p3
+aS'-reassociate'
+p4
+aS'-loop-idiom'
+p5
+aS'-die'
+p6
+asS'fitness'
+p7
+I689
+s.

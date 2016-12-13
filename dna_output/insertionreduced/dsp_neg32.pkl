@@ -1,0 +1,16 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-scalarrepl'
+p3
+aS'-lowerinvoke'
+p4
+aS'-early-cse'
+p5
+aS'-loop-idiom'
+p6
+asS'fitness'
+p7
+I1755
+s.
