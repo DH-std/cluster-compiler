@@ -1,0 +1,16 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-sink'
+p3
+aS'-indvars'
+p4
+aS'-prune-eh'
+p5
+aS'-domtree'
+p6
+asS'fitness'
+p7
+I963
+s.
