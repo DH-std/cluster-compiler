@@ -6,7 +6,7 @@ clean-insertion: 167
 insertion-clean: 230
 CIC: 159
 ga reduced: 110
-insert reduced: 95
-clean reduced: 14
-clean-insertion: 864
-insertion-clean: 905
+insert reduced: 67
+clean reduced: 13
+clean-insertion: 895
+insertion-clean: 881
