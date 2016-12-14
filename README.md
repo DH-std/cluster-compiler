@@ -4,6 +4,7 @@
 - `/src` folder contains all implementation and scripts running our system
 - `/benchmark` folder includes all reference functions and test functions, and `compilable` subfolder has everything needs to compile those functions
 - `/dna_output` and `/ir_output` store our best optimization sequence and its corresponding cycles for each algorithm on different search space.
+
 ### Installation
 We run our system on AWS ubuntun instance. Following software needs to be installed to run our system:
 - python 2.7
