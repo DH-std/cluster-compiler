@@ -4,13 +4,9 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-aS'-loop-unroll'
+aS'-mergefunc'
 p4
-aS'-instsimplify'
-p5
-aS'-early-cse'
-p6
 asS'fitness'
-p7
-I2815
+p5
+I2820
 s.
