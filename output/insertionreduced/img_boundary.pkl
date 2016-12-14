@@ -4,15 +4,7 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-aS'-loop-unroll'
-p4
-aS'-globalopt'
-p5
-aS'-scalarrepl-ssa'
-p6
-aS'-gvn'
-p7
 asS'fitness'
-p8
-I843
+p4
+I1032
 s.
