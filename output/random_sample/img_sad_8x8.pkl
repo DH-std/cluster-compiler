@@ -6,11 +6,5 @@ S'-scalarrepl'
 p3
 aS'-reassociate'
 p4
-aS'-sccp'
-p5
-aS'-loop-idiom'
-p6
-asS'fitness'
-p7
-I995
+I887
 s.

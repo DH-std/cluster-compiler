@@ -4,7 +4,13 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-asS'fitness'
+aS'-loop-idiom'
 p4
-I11390
+aS'-inline'
+p5
+aS'-loop-rotate'
+p6
+asS'fitness'
+p7
+I10464
 s.
