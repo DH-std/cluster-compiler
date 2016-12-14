@@ -1,5 +1,5 @@
 (lp0
-S'scalarrepl'
+S'-scalarrepl'
 p1
 aS'-partial-inliner'
 p2
@@ -41,14 +41,12 @@ aS'-gvn'
 p20
 aS'-no-aa'
 p21
-aS'-scalarrepl'
-p22
 aS'-globalopt'
-p23
+p22
 aS'-constmerge'
-p24
+p23
 aS'-tailcallelim'
-p25
+p24
 aS'-constprop'
-p26
+p25
 a.

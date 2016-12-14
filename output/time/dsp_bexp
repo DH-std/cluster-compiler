@@ -1,7 +1,6 @@
-ga reduced: 154
-insertion reduced: 195
-insert reduced: 42
-clean reduced: 1
-clean-insertion: 910
-insertion-clean: 131
-CIC: 2873
+ga reduced: 107
+insertion full: 122
+insert reduced: 48
+clean reduced: 10
+clean-insertion: 583
+insertion-clean: 6665
