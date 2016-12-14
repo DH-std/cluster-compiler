@@ -1,14 +1,18 @@
 #!/bin/bash
 
-outfile=$1
-if [ -z $1 ]
+outfile=$2
+if [ -z $2 ]
 then
   outfile="O2.output"
 fi
 
 tar_dir=../benchmark/compilable
-infiles=($(ls $tar_dir))
 
+infiles=$1
+if [ -z $1 ]
+then
+  infiles=($(ls $tar_dir))
+fi
 make() {
   infile=$1
   clang -O2 -emit-llvm -o $infile.opt.bc -c ../benchmark/compilable/$infile/$infile.c
