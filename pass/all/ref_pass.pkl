@@ -55,7 +55,7 @@ p27
 asS'dsp_maxval'
 p28
 (lp29
-S'scalarrepl'
+S'-scalarrepl'
 p30
 aS'-partial-inliner'
 p31

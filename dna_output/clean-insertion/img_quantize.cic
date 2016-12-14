@@ -4,7 +4,7 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-aS'-scalar-evolution'
+aS'-reassociate'
 p4
 aS'-early-cse'
 p5
