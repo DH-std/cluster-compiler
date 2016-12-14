@@ -2,9 +2,11 @@
 S'seq'
 p1
 (lp2
-S'-scalarrepl-ssa'
+S'-loop-unroll'
 p3
-asS'fitness'
+aS'-scalarrepl'
 p4
-I375
+asS'fitness'
+p5
+I561
 s.
