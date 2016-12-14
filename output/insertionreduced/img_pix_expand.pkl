@@ -4,13 +4,11 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-aS'-instsimplify'
-p4
 aS'-lowerinvoke'
-p5
+p4
 aS'-scalar-evolution'
-p6
+p5
 asS'fitness'
-p7
-I1957
+p6
+I1940
 s.
