@@ -4,8 +4,8 @@ insert reduced: 86
 clean reduced: 17
 clean-insertion: 1070
 insertion-clean: 2626
-ga reduced: 106
-insert reduced: 64
-clean reduced: 12
-clean-insertion: 730
-insertion-clean: 766
+ga reduced: 108
+insert reduced: 40
+clean reduced: 11
+clean-insertion: 765
+insertion-clean: 746
