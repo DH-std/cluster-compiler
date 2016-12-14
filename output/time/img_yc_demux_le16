@@ -1,5 +1,7 @@
-ga reduced: 102
-insert reduced: 56
-clean reduced: 12
-clean-insertion: 678
-insertion-clean: 842
+--------IR-----------
+ga reduced: 112
+insert reduced: 57
+clean reduced: 11
+clean-insertion: 777
+insertion-clean: 760
+---------------------
