@@ -4,7 +4,7 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-aS'-loop-unroll'
+aS'-early-cse'
 p4
 aS'-lowerinvoke'
 p5
@@ -52,5 +52,5 @@ aS'-constprop'
 p26
 asS'fitness'
 p27
-I3725
+I2484
 s.
