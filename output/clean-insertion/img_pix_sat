@@ -4,9 +4,9 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-aS'-instsimplify'
+aS'-scalar-evolution'
 p4
-aS'-loop-rotate'
+aS'-scalarrepl-ssa'
 p5
 aS'-lowerinvoke'
 p6
@@ -16,9 +16,11 @@ aS'-loops'
 p8
 aS'-deadargelim'
 p9
-aS'-mergefunc'
+aS'-ipsccp'
 p10
-asS'fitness'
+aS'-mergefunc'
 p11
-I5588
+asS'fitness'
+p12
+I6172
 s.
