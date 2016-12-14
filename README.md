@@ -33,6 +33,8 @@ Goto `/src`, run DNA based clustering and pass optimization on all DSE algorithm
 ```sh
 $ ./runDNA.sh
 ```
+All results will be in `/output` folder (optimization sequence, cycles and execution time)
+
 You can switch test functions by changing the third line in `runDNA.sh`
 
 ##### IR
@@ -40,4 +42,6 @@ Goto `/src`, run IR based clustering and pass optimization on all DSE algorithms
 ```sh
 $ ./runIR.sh
 ```
+All results will be in `/output` folder (optimization sequence, cycles and execution time)
+
 You can switch test functions by changing the third line in `runIR.sh`
