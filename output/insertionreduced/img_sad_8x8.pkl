@@ -1,0 +1,10 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-scalarrepl'
+p3
+aS'-argpromotion'
+p4
+I875
+s.

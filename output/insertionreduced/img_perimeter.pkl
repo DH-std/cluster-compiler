@@ -4,13 +4,11 @@ p1
 (lp2
 S'-scalarrepl'
 p3
-aS'-argpromotion'
+aS'-scalar-evolution'
 p4
-aS'-loop-idiom'
+aS'-early-cse'
 p5
-aS'-functionattrs'
-p6
 asS'fitness'
-p7
-I1527
+p6
+I1870
 s.
