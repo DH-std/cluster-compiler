@@ -1,0 +1,10 @@
+(dp0
+S'seq'
+p1
+(lp2
+S'-scalarrepl'
+p3
+asS'fitness'
+p4
+I2923
+s.
